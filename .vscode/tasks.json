@@ -1,0 +1,54 @@
+// See https://go.microsoft.com/fwlink/?LinkId=733558
+// for the documentation about the tasks.json format
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "g++",
+            "args": [
+                // flags ------------------------------------------------------
+
+                // cpp only
+                "-std=c++11",
+
+                // c & cpp
+                "-Wall",
+                "-Wextra",
+                "-O",
+                "-g",
+                "-pedantic",
+                
+                "-o",
+                // executable name --------------------------------------------
+                //"${fileDirname}/${fileBaseNameNoExtention}.exe",
+                "${fileDirname}/TTT.exe",
+                
+                // files to compile -------------------------------------------
+                "${fileDirname}/Main.cpp",
+                "${fileDirname}/Board.cpp",
+                "${fileDirname}/PRNG.cpp",
+                //"${relativeFile}",
+            ],
+            "problemMatcher": {
+                "owner": "cpp",
+                "fileLocation": [
+                    "relative",
+                    "${workspaceFolder}"
+                ],
+                "pattern": {
+                    "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                    "file": 1,
+                    "line": 2,
+                    "column": 3,
+                    "severity": 4,
+                    "message": 5
+                }
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
+        }
+    ]
+}
