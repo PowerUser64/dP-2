@@ -1,0 +1,29 @@
+////////////////////////////////////////////////
+Testing valid placements.
+Board after valid placements: 
+ -------------
+ | X | O | X | 
+ -------------
+ | O | X | O | 
+ -------------
+ | X | O | X | 
+ -------------
+Testing out of bounds placements.
+Board after out-of-bounds placements: 
+ -------------
+ | X | O | X | 
+ -------------
+ | O | X | O | 
+ -------------
+ | X | O | X | 
+ -------------
+Testing occupied placement.
+Board after occupied placements: 
+ -------------
+ | X | O | X | 
+ -------------
+ | O | X | O | 
+ -------------
+ | X | O | X | 
+ -------------
+

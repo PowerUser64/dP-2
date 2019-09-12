@@ -1,0 +1,1003 @@
+////////////////////////////////////////////////
+Testing random placement for 1000 games.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Tie.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Tie.
+Tie.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Tie.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Tie.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Tie.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Tie.
+Player 2 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 1 wins.
+Player 2 wins.
+Player 2 wins.
+Player 1 wins.
+Player 2 wins.
+Player 1 wins.
+
