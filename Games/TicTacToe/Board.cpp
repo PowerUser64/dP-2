@@ -10,9 +10,9 @@
 #define board_h 3
 #define board_w 3
 // printed board height
-#define lines 7
+#define lines 3
 // printed board width (treating " | " as one character)
-#define parts 7
+#define parts 3
 
 namespace CS170
 {
@@ -36,7 +36,7 @@ Board *BoardCreate()
     for (size_t i = 0; i < board_h; i++)
     {
         board->data[i] = new TileState[board_w];
-        for (j = 0; j < board_w; board->data[i][j++])
+        for (j = 0; j < board_w; board->data[i][j++] = tsEMPTY)
             ;
     }
     return board;
@@ -73,7 +73,7 @@ void BoardDisplay(const Board &board)
             else
                 std::cout << "O";
         }
-        std::cout << "\n-------------\n";
+        std::cout << " | \n -------------\n";
     }
 
     /* 
@@ -98,11 +98,18 @@ void BoardDisplay(const Board &board)
 //   Whether the token was able to be placed.
 PlaceResult BoardPlaceToken(Board &board, unsigned row, unsigned column, TileState value)
 {
-    board.data[row][column] = value;
-    if (board.data[row][column] == value)
-        return (PlaceResult)1;
+    if (row < board_h && column < board_w)
+    {
+        if (board.data[row][column] == tsEMPTY)
+        {
+            board.data[row][column] = value;
+            return prACCEPTED;
+        }
+        else
+            return prREJECTED_OCCUPIED;
+    }
     else
-        return (PlaceResult)0;
+        return prREJECTED_OUTOFBOUNDS;
 }
 // Reset the board to an empty state.
 // Params:
@@ -133,7 +140,7 @@ BoardState BoardGetState(const Board &board)
         }
     // verticle loop through all on one column
     for (j = 0; j < 3; j++)
-        if (board.data[0][j] != -1 && board.data[0][j] == board.data[1][j] && board.data[1][j] == board.data[2][j])
+        if (board.data[0][j] != tsEMPTY && board.data[0][j] == board.data[1][j] && board.data[1][j] == board.data[2][j])
         {
             if (board.data[0][j] == tsPLAYER_ONE)
                 return bsWIN_ONE;
@@ -142,7 +149,7 @@ BoardState BoardGetState(const Board &board)
         }
     // diagonals check all at once
 
-    if (board.data[0][0] != -1 && board.data[0][0] == board.data[1][1] && board.data[1][1] == board.data[2][2])
+    if (board.data[0][0] != tsEMPTY && board.data[0][0] == board.data[1][1] && board.data[1][1] == board.data[2][2])
     {
         if (board.data[0][0] == tsPLAYER_ONE)
             return bsWIN_ONE;
@@ -151,7 +158,7 @@ BoardState BoardGetState(const Board &board)
     }
 
     // other diagonal
-    if (board.data[0][2] != -1 && board.data[0][2] == board.data[1][1] && board.data[1][1] == board.data[2][0])
+    if (board.data[0][2] != tsEMPTY && board.data[0][2] == board.data[1][1] && board.data[1][1] == board.data[2][0])
     {
         if (board.data[0][2] == tsPLAYER_ONE)
             return bsWIN_ONE;
@@ -162,16 +169,10 @@ BoardState BoardGetState(const Board &board)
     // make sure not tie
     for (i = 0; i < 3; i++)
         for (j = 0; j < 3; j++)
-            /* -1 means the game isn't done */
-            if (board.data[i][j] == -1)
-            {
-                if (board.data[i][j] == tsPLAYER_ONE)
-                    return bsWIN_ONE;
-                if (board.data[i][j] == tsPLAYER_TWO)
-                    return bsWIN_TWO;
-            }
+            if (board.data[i][j] == tsEMPTY)
+                return bsOPEN;
 
     // it is a tie if it gets here
-    return (BoardState) bsTIE;
+    return (BoardState)bsTIE;
 }
 } // namespace CS170
