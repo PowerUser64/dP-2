@@ -21,14 +21,14 @@
                 
                 "-o",
                 // executable name --------------------------------------------
-                //"${fileDirname}/${fileBaseNameNoExtention}.exe",
-                "${fileDirname}/TTT.exe",
+                "${fileDirname}/${fileBasenameNoExtension}.exe",
+                //"${fileDirname}/TTT.exe",
                 
-                // files to compile -------------------------------------------
-                "${fileDirname}/Main.cpp",
-                "${fileDirname}/Board.cpp",
-                "${fileDirname}/PRNG.cpp",
-                //"${relativeFile}",
+                // Files to compile -------------------------------------------
+                // "${fileDirname}/Main.cpp",
+                // "${fileDirname}/Board.cpp",
+                // "${fileDirname}/PRNG.cpp",
+                "${relativeFile}",
             ],
             "problemMatcher": {
                 "owner": "cpp",
