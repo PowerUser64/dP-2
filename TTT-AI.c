@@ -1,9 +1,9 @@
 /****************************
 Filename: TicTacToeAI.c
 Name: Blakely North
-Date Last Edited: 1-15-2019
+Date Last Edited: 9-13-2019
 Brief Description: TicTacToe with AI for the second AP Project practice.
-gcc -Wall -Wextra -O -ansi -pedantic -o TicTacToeAI TicTacToeAI.c
+gcc -Wall -Wextra -O -g -pedantic -o TicTacToeAI TicTacToeAI.c
 ****************************/
 /*printf, scanf*/
 #include <stdio.h>
@@ -55,15 +55,15 @@ int main(void)
     /* Wether somone has won yet. (-1 = no win yet, 0 = AI won, 1 = Player won, 2 = Tie) */
     int gamestate = -1;
     char playerName[NAMEMAXLENGTH] = {'P', 'l', 'a', 'y', 'e', 'r'};
-    printf("Welcome to TicTacToe AI edition.\nPlease enter a player name with less than %i characters: ", NAMEMAXLENGTH);
-    scanf("%s", playerName);
-    /* */
+    printf("Welcome to TicTacToe AI edition.\n\n");
+
+    // Game loop
     while (gamestate == -1)
     {
         if (playerTurn == 1)
         {
             printBoard();
-            printf("Your turn, %s: ", playerName);
+            printf("Your turn: ");
             scanf("%i", &input);
         }
         else
@@ -71,7 +71,7 @@ int main(void)
 
         if (input >= 0 && input <= 9 && board[input / 3][input % 3] == -1)
         {
-            /*legal input found*/
+            // legal input found
             board[input / 3][input % 3] = playerTurn;
         }
         else
@@ -83,7 +83,7 @@ int main(void)
         playerTurn = !playerTurn;
         gamestate = CheckGrid();
     }
-    /* Who's the winner? */
+    // Who won?
     switch (gamestate)
     {
     case 0:
@@ -137,6 +137,7 @@ int CheckGrid()
 void printBoard()
 {
     int i, j;
+    printf("-------------\n");
     for (i = 0; i < 3; i++)
     {
         printf("|");
@@ -155,7 +156,7 @@ void printBoard()
                 break;
             }
         }
-        printf("\n\n");
+        printf("\n-------------\n");
     }
     return;
 }
