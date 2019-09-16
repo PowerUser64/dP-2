@@ -9,7 +9,11 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            // Multi file
+            "program": "${fileDirname}/WB.exe",
+            // Single file
+            // "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+            
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

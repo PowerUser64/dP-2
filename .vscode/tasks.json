@@ -20,15 +20,24 @@
                 "-pedantic",
                 
                 "-o",
+                
                 // executable name --------------------------------------------
-                "${fileDirname}/${fileBasenameNoExtension}.exe",
-                //"${fileDirname}/TTT.exe",
+                
+                // Multi file projects
+                  "${fileDirname}/WB.exe",
+                
+                // Single file projects
+                //   "${fileDirname}/${fileBasenameNoExtension}.exe",
                 
                 // Files to compile -------------------------------------------
-                // "${fileDirname}/Main.cpp",
-                // "${fileDirname}/Board.cpp",
-                // "${fileDirname}/PRNG.cpp",
-                "${relativeFile}",
+                // Multi file projects
+                "${fileDirname}/Ocean.cpp",
+                "${fileDirname}/driver_sample.cpp",
+                // "${fileDirname}/driver_big.cpp",
+                "${fileDirname}/PRNG.cpp",
+                
+                // Single file projects 
+                //   "${relativeFile}",
             ],
             "problemMatcher": {
                 "owner": "cpp",
