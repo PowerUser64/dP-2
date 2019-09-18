@@ -131,6 +131,6 @@ int main(void)
     //test_rect(99, 30, 30, true, false);
     //test_rect(99, 30, 30, true, true);
 
-    system("pause");
+    //system("pause");
     return 0;
 }
