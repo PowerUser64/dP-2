@@ -19,22 +19,25 @@ const int HIT_OFFSET = 100; // Add this to the boat ID
 Ocean *CreateOcean(int num_boats, int x_quadrants, int y_quadrants)
 {
     Ocean *ocean = new Ocean;
-    ocean->grid = new int *[y_quadrants];
+    ocean->grid = new int *[x_quadrants];
     int j = 0;
-    for (int i = 0; i < y_quadrants; i++)
+    for (int i = 0; i < x_quadrants; i++)
     {
-        ocean->grid[i] = new int[x_quadrants];
-        for (j = 0; j < x_quadrants; ocean->grid[i][j++] = 0)
+        ocean->grid[i] = new int[y_quadrants];
+        for (j = 0; j < y_quadrants; ocean->grid[i][j++] = 0)
             ;
     }
+    ocean->boats = new Boat[num_boats];
     ocean->num_boats = num_boats;
+    ocean->x_quadrants = x_quadrants;
+    ocean->y_quadrants = y_quadrants;
     return ocean;
 }
 
 // deallocates the ocean array
 void DestroyOcean(Ocean *theOcean)
 {
-    for (int i = 0; i < theOcean->y_quadrants; ++i)
+    for (int i = 0; i < theOcean->x_quadrants; ++i)
     {
         delete[] theOcean->grid[i];
     }
@@ -50,18 +53,24 @@ ShotResult TakeShot(Ocean &ocean, const Point &coordinate)
         return srILLEGAL;
     if (coordinate.y > ocean.y_quadrants || coordinate.y < 0)
         return srILLEGAL;
-    
-    // check if it's on the water or on a boat
-    // miss
-    if (ocean.grid[coordinate.x][coordinate.y] == 0)
+
+    // is it on the water or on a boat or another hit
+    // duplicate?
+    if (ocean.grid[coordinate.x][coordinate.y] < 0 && ocean.grid[coordinate.x][coordinate.y] > 100)
+        return srDUPLICATE;
+    // miss?
+    else if (ocean.grid[coordinate.x][coordinate.y] == 0)
     {
         ocean.grid[coordinate.x][coordinate.y]--;
         ocean.stats.misses++;
         return srMISS;
     }
-    // hit
-    else if (ocean.grid[coordinate.x][coordinate.y] > 0)
+    // hit?
+    else if (ocean.grid[coordinate.x][coordinate.y] > 0 && ocean.grid[coordinate.x][coordinate.y] < 100)
     {
+        ocean.boats[ocean.grid[coordinate.x][coordinate.y] - 1].hits += 1;
+        if (ocean.boats[ocean.grid[coordinate.x][coordinate.y]].hits == BOAT_LENGTH)
+            return srSUNK;
         ocean.grid[coordinate.x][coordinate.y] += 100;
         ocean.stats.hits++;
         return srHIT;
@@ -75,49 +84,55 @@ BoatPlacement PlaceBoat(Ocean &ocean, const Boat &boat)
     // Bounds check
     if (boat.orientation == oHORIZONTAL)
     {
-        if (/* check first  end */ ocean.grid[boat.position.x][boat.position.y] < 0 &&
-            /* check second end */ ocean.grid[boat.position.x + BOAT_LENGTH][boat.position.y] < ocean.x_quadrants)
+        if ( // check first end
+            // left edge
+            boat.position.x >= 0 && boat.position.y >= 0 &&
+            // right edge
+            boat.position.x < ocean.x_quadrants && boat.position.y < ocean.y_quadrants &&
+            // check second end
+            boat.position.x + BOAT_LENGTH < ocean.x_quadrants)
+        {
             // Check for things beneath it
-            if (boat.orientation == oHORIZONTAL)
+            for (int i = 0; i < BOAT_LENGTH; ++i)
             {
-                for (int i = 0; i < BOAT_LENGTH; ++i)
-                    if (ocean.grid[boat.position.x + i][boat.position.y] == 0)
-                        // set the boat's spaces to the boat's id's
-                        for (int i = 0; i < BOAT_LENGTH; ++i)
-                        {
-                            ocean.grid[boat.position.x + i][boat.position.y] = boat.ID;
-                            
-                            // could be placed
-                            return bpACCEPTED;
-                        }
+                if (ocean.grid[boat.position.x + i][boat.position.y] != 0)
                     // couldn't be placed
-                    else
-                        return bpREJECTED;
+                    return bpREJECTED;
             }
+            // set the boat's spaces to the boat's id's
+            for (int i = 0; i < BOAT_LENGTH; ++i)
+            {
+                ocean.grid[boat.position.x + i][boat.position.y] = boat.ID;
+            }
+            // could be placed
+            return bpACCEPTED;
+        }
     }
 
     // check for vertical oreintation
     else if (boat.orientation == oVERTICAL)
     {
-        if (/* check first  end */ ocean.grid[boat.position.x][boat.position.y] < 0 &&
-            /* check second end */ ocean.grid[boat.position.x][boat.position.y + BOAT_LENGTH] < ocean.y_quadrants)
+        if ( // check first end
+            // left edge
+            boat.position.x >= 0 && boat.position.y >= 0 &&
+            // right edge
+            boat.position.x < ocean.x_quadrants && boat.position.y < ocean.y_quadrants &&
+            // check second end
+            boat.position.y + BOAT_LENGTH < ocean.y_quadrants)
+        {
             // Check for things beneath it
-            if (boat.orientation == oVERTICAL)
+            for (int i = 0; i < BOAT_LENGTH; ++i)
             {
-                for (int i = 0; i < BOAT_LENGTH; ++i)
-                    if (ocean.grid[boat.position.x][boat.position.y + i] == 0)
-                        // set the boat's spaces to the boat's id's
-                        for (int i = 0; i < BOAT_LENGTH; ++i)
-                        {
-                            ocean.grid[boat.position.x + i][boat.position.y] = boat.ID;
-                            
-                            // could be placed
-                            return bpACCEPTED;
-                        }
+                if (ocean.grid[boat.position.x][boat.position.y + i] != 0)
                     // couldn't be placed
-                    else
-                        return bpREJECTED;
+                    return bpREJECTED;
             }
+            for (int i = 0; i < BOAT_LENGTH; ++i)
+                // set the boat's spaces to the boat's id's
+                ocean.grid[boat.position.x][boat.position.y + i] = boat.ID;
+            // could be placed
+            return bpACCEPTED;
+        }
     }
     return bpREJECTED;
 }
@@ -127,7 +142,6 @@ ShotStats GetShotStats(const Ocean &ocean)
 {
     return ocean.stats;
 }
-
 
 /*********************************************************************/
 /*!
@@ -178,5 +192,5 @@ void DumpOcean(const CS175::WarBoats::Ocean &ocean,
     }
 }
 
-} // namespace CS175
+} // namespace WarBoats
 } // namespace CS175
