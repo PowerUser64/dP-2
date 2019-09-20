@@ -31,6 +31,10 @@ Ocean *CreateOcean(int num_boats, int x_quadrants, int y_quadrants)
     ocean->num_boats = num_boats;
     ocean->x_quadrants = x_quadrants;
     ocean->y_quadrants = y_quadrants;
+    ocean->stats.hits = 0;
+    ocean->stats.duplicates = 0;
+    ocean->stats.misses = 0;
+    ocean->stats.sunk = 0;
     return ocean;
 }
 
@@ -54,25 +58,35 @@ ShotResult TakeShot(Ocean &ocean, const Point &coordinate)
     if (coordinate.y > ocean.y_quadrants || coordinate.y < 0)
         return srILLEGAL;
 
+    // debug
+    int &dataAtLocation = ocean.grid[coordinate.x][coordinate.y];
+
     // is it on the water or on a boat or another hit
-    // duplicate?
-    if (ocean.grid[coordinate.x][coordinate.y] < 0 && ocean.grid[coordinate.x][coordinate.y] > 100)
-        return srDUPLICATE;
     // miss?
-    else if (ocean.grid[coordinate.x][coordinate.y] == 0)
+    if (dataAtLocation == 0)
     {
-        ocean.grid[coordinate.x][coordinate.y]--;
+        dataAtLocation--;
         ocean.stats.misses++;
+        // duplicate?
         return srMISS;
     }
-    // hit?
-    else if (ocean.grid[coordinate.x][coordinate.y] > 0 && ocean.grid[coordinate.x][coordinate.y] < 100)
+    else if (dataAtLocation < 0 || dataAtLocation > 100)
     {
-        ocean.boats[ocean.grid[coordinate.x][coordinate.y] - 1].hits += 1;
-        if (ocean.boats[ocean.grid[coordinate.x][coordinate.y]].hits == BOAT_LENGTH)
-            return srSUNK;
-        ocean.grid[coordinate.x][coordinate.y] += 100;
+        ocean.stats.duplicates++;
+        return srDUPLICATE;
+    }
+    // hit?
+    else if (dataAtLocation > 0 && dataAtLocation < 100)
+    {
         ocean.stats.hits++;
+        ocean.boats[dataAtLocation - 1].hits += 1;
+        if (ocean.boats[dataAtLocation - 1].hits == BOAT_LENGTH)
+        {
+            dataAtLocation += 100;
+            ++ocean.stats.sunk;
+            return srSUNK;
+        }
+        dataAtLocation += 100;
         return srHIT;
     }
     return srILLEGAL;
@@ -90,7 +104,7 @@ BoatPlacement PlaceBoat(Ocean &ocean, const Boat &boat)
             // right edge
             boat.position.x < ocean.x_quadrants && boat.position.y < ocean.y_quadrants &&
             // check second end
-            boat.position.x + BOAT_LENGTH < ocean.x_quadrants)
+            boat.position.x + BOAT_LENGTH - 1 < ocean.x_quadrants)
         {
             // Check for things beneath it
             for (int i = 0; i < BOAT_LENGTH; ++i)
@@ -118,7 +132,7 @@ BoatPlacement PlaceBoat(Ocean &ocean, const Boat &boat)
             // right edge
             boat.position.x < ocean.x_quadrants && boat.position.y < ocean.y_quadrants &&
             // check second end
-            boat.position.y + BOAT_LENGTH < ocean.y_quadrants)
+            boat.position.y + BOAT_LENGTH - 1 < ocean.y_quadrants)
         {
             // Check for things beneath it
             for (int i = 0; i < BOAT_LENGTH; ++i)
