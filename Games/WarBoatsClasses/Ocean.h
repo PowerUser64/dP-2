@@ -57,13 +57,14 @@ public:
   Point GetDimensions(void) const;
 
 private:
-  int *grid;      // The 2D ocean
+  int *grid; // The 2D ocean
+  int *hits; // The hits that the boats have
   int x_quadrants; // Ocean size along x-axis
   int y_quadrants; // Ocean size along y-axis
+  int num_boats; // The number of boats in the ocean
 
-  /*
-         * Other private data
-        */
+  /* Other private data
+   */
 
 }; // class Ocean
 

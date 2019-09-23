@@ -14,7 +14,11 @@ namespace WarBoats
  */
 Ocean::Ocean(int num_boats_, int x_quadrants_, int y_quadrants_)
 {
-    return;
+    grid = new int [x_quadrants + y_quadrants];
+    num_boats = num_boats_;
+    *hits = num_boats_;
+    x_quadrants = x_quadrants_;
+    y_quadrants = y_quadrants_;
 }
 
 /* Destructor-This method is responsible for deallocating anything that was allocated in the constructor
