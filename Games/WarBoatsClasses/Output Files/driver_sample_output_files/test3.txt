@@ -1,0 +1,116 @@
+The empty board
+   0   0   0   0   0
+   0   0   0   0   0
+   0   0   0   0   0
+   0   0   0   0   0
+   0   0   0   0   0
+
+Boat placement is rejected.
+Boat placement is rejected.
+Boat placement is rejected.
+Boat placement is rejected.
+Boat placement is rejected.
+Boat placement is rejected.
+Boat placement is rejected.
+Boat placement is rejected.
+Boat placement is accepted.
+The board with 1 boats
+   1   0   0   0   0
+
+   1   0   0   0   0
+
+   1   0   0   0   0
+
+   1   0   0   0   0
+
+   0   0   0   0   0
+
+
+Shot: -1, 0  ILLEGAL
+      Hits:   0
+    Misses:   0
+Duplicates:   0
+Boats Sunk:   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   0   0   0   0   0
+
+Shot: -100, 0  ILLEGAL
+      Hits:   0
+    Misses:   0
+Duplicates:   0
+Boats Sunk:   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   0   0   0   0   0
+
+Shot: 0, -1  ILLEGAL
+      Hits:   0
+    Misses:   0
+Duplicates:   0
+Boats Sunk:   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   0   0   0   0   0
+
+Shot: 0, -100  ILLEGAL
+      Hits:   0
+    Misses:   0
+Duplicates:   0
+Boats Sunk:   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   0   0   0   0   0
+
+Shot: 6, 0  ILLEGAL
+      Hits:   0
+    Misses:   0
+Duplicates:   0
+Boats Sunk:   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   0   0   0   0   0
+
+Shot: 60, 0  ILLEGAL
+      Hits:   0
+    Misses:   0
+Duplicates:   0
+Boats Sunk:   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   0   0   0   0   0
+
+Shot: 0, 6  ILLEGAL
+      Hits:   0
+    Misses:   0
+Duplicates:   0
+Boats Sunk:   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   0   0   0   0   0
+
+Shot: 0, 60  ILLEGAL
+      Hits:   0
+    Misses:   0
+Duplicates:   0
+Boats Sunk:   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   1   0   0   0   0
+   0   0   0   0   0
+
