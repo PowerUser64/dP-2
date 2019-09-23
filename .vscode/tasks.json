@@ -32,8 +32,8 @@
                 // Files to compile -------------------------------------------
                 // Multi file projects
                 "${fileDirname}/Ocean.cpp",
-                // "${fileDirname}/driver_sample.cpp",
-                "${fileDirname}/driver_big.cpp",
+                "${fileDirname}/driver_sample.cpp",
+                // "${fileDirname}/driver_big.cpp",
                 "${fileDirname}/PRNG.cpp",
                 
                 // Single file projects 
