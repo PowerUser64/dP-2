@@ -48,7 +48,7 @@ public:
   
   /* Returns data about the board that has bneen collected over time
    */
-  ShotStats &GetShotStats(void);
+  const ShotStats &GetShotStats() const;
 
   // End my functions :::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -62,6 +62,7 @@ private:
   int x_quadrants; // Ocean size along x-axis
   int y_quadrants; // Ocean size along y-axis
   int num_boats; // The number of boats in the ocean
+  ShotStats stats;
 
   /* Other private data
    */

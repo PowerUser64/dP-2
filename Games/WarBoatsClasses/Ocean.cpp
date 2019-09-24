@@ -14,11 +14,15 @@ namespace WarBoats
  */
 Ocean::Ocean(int num_boats_, int x_quadrants_, int y_quadrants_)
 {
-    grid = new int [x_quadrants + y_quadrants];
+    grid = new int[x_quadrants * y_quadrants];
+    hits = new int[num_boats_];
     num_boats = num_boats_;
-    *hits = num_boats_;
     x_quadrants = x_quadrants_;
     y_quadrants = y_quadrants_;
+    stats.hits = 0;
+    stats.duplicates = 0;
+    stats.misses = 0;
+    stats.sunk = 0;
 }
 
 /* Destructor-This method is responsible for deallocating anything that was allocated in the constructor
@@ -26,6 +30,8 @@ Ocean::Ocean(int num_boats_, int x_quadrants_, int y_quadrants_)
  */
 Ocean::~Ocean(void)
 {
+    delete[] hits;
+    delete[] grid;
     return;
 }
 
@@ -38,7 +44,60 @@ Ocean::~Ocean(void)
  */
 BoatPlacement Ocean::PlaceBoat(const Boat &boat_)
 {
-    return;
+    // Bounds check
+    if (boat_.orientation == oHORIZONTAL)
+    {
+        if ( // check first end
+            // left edge
+            boat_.position.x >= 0 && boat_.position.y >= 0 &&
+            // right edge
+            boat_.position.x < x_quadrants && boat_.position.y < y_quadrants &&
+            // check second end
+            boat_.position.x + BOAT_LENGTH - 1 < x_quadrants)
+        {
+            // Check for things beneath it
+            for (int i = 0; i < BOAT_LENGTH; ++i)
+            {
+                if (grid[boat_.position.x + x_quadrants * (boat_.position.y + i)] != 0)
+                    // couldn't be placed
+                    return bpREJECTED;
+            }
+            // set the boat's spaces to the boat's id's
+            for (int i = 0; i < BOAT_LENGTH; ++i)
+            {
+                grid[boat_.position.x + x_quadrants * (boat_.position.y + i)] = boat_.ID;
+            }
+            // could be placed
+            return bpACCEPTED;
+        }
+    }
+
+    // check for vertical oreintation
+    else if (boat_.orientation == oVERTICAL)
+    {
+        if ( // check first end
+            // left edge
+            boat_.position.x >= 0 && boat_.position.y >= 0 &&
+            // right edge
+            boat_.position.x < x_quadrants && boat_.position.y < y_quadrants &&
+            // check second end
+            boat_.position.y + BOAT_LENGTH - 1 < y_quadrants)
+        {
+            // Check for things beneath it
+            for (int i = 0; i < BOAT_LENGTH; ++i)
+            {
+                if (grid[boat_.position.x + x_quadrants * (boat_.position.y + i)] != 0)
+                    // couldn't be placed
+                    return bpREJECTED;
+            }
+            for (int i = 0; i < BOAT_LENGTH; ++i)
+                // set the boat's spaces to the boat's id's
+                grid[boat_.position.x + x_quadrants * (boat_.position.y + i)] = boat_.ID;
+            // could be placed
+            return bpACCEPTED;
+        }
+    }
+    return bpREJECTED;
 }
 
 /* Client calls this in an attempt to hit one of the boats
@@ -52,14 +111,52 @@ BoatPlacement Ocean::PlaceBoat(const Boat &boat_)
  */
 ShotResult Ocean::TakeShot(const Point &coordinate_)
 {
-    return;
+    // check if it's in bounds
+    if (coordinate_.x > x_quadrants || coordinate_.x < 0)
+        return srILLEGAL;
+    if (coordinate_.y > y_quadrants || coordinate_.y < 0)
+        return srILLEGAL;
+
+    // debug
+    int &dataAtLocation = grid[coordinate_.x + x_quadrants * coordinate_.y];
+
+    // is it on the water or on a boat or another hit
+    // miss?
+    if (dataAtLocation == 0)
+    {
+        --dataAtLocation;
+        ++stats.misses;
+        // duplicate?
+        return srMISS;
+    }
+    else if (dataAtLocation < 0 || dataAtLocation > 100)
+    {
+        ++stats.duplicates;
+        return srDUPLICATE;
+    }
+    // hit?
+    else if (dataAtLocation > 0 && dataAtLocation < 100)
+    {
+        ++stats.hits;
+        ++hits[dataAtLocation];
+        grid[dataAtLocation - 1] += 1;
+        if (hits[dataAtLocation - 1] == BOAT_LENGTH)
+        {
+            dataAtLocation += 100;
+            ++stats.sunk;
+            return srSUNK;
+        }
+        dataAtLocation += 100;
+        return srHIT;
+    }
+    return srILLEGAL;
 }
 
 /* Returns data about the board that has bneen collected over time
  */
-ShotStats &Ocean::GetShotStats(void)
+const ShotStats &Ocean::GetShotStats(void) const
 {
-    return;
+    return stats;
 }
 
 // End my functions :::::::::::::::::::::::::::::::::::::::::::::::::::::::::
