@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Precompiled">
+      <UniqueIdentifier>{c54e400a-0b22-4fb9-ad4a-68aaa9abc7ca}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\stdafx.cpp">
+      <Filter>Precompiled</Filter>
+    </ClCompile>
+    <ClCompile Include="soUrce\Level1.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\stdafx.h">
+      <Filter>Precompiled</Filter>
+    </ClInclude>
+    <ClInclude Include="soUrce\Level1.h" />
+  </ItemGroup>
+</Project>
