@@ -10,12 +10,12 @@
     <ClCompile Include="Source\stdafx.cpp">
       <Filter>Precompiled</Filter>
     </ClCompile>
-    <ClCompile Include="soUrce\Level1.cpp" />
+    <ClCompile Include="Source\Lab1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\stdafx.h">
       <Filter>Precompiled</Filter>
     </ClInclude>
-    <ClInclude Include="soUrce\Level1.h" />
+    <ClInclude Include="Source\Lab1.h" />
   </ItemGroup>
 </Project>
