@@ -84,26 +84,26 @@ void Lab1::Update(float dt)
 		Vector2D end3 = Vector2D(0, 0);
 
 		// Multiplier
-		float M = 0.5;
+		float scaler = 0.5;
 
 		// one hour (at high speed) (Red)
-		rad_pos1 += (dt * (3.0f * pi / 60.0f)) * M;
+		rad_pos1 += (dt * (3.0f * pi / 60.0f)) * scaler;
 		// One minute (at high speed) (Aqua)
-		rad_pos2 += (dt * 2.0f * pi) * M;
+		rad_pos2 += (dt * 2.0f * pi)           * scaler;
 		// one second (at high speed) (Violet)
-		rad_pos3 += (dt * 1.0f * pi * 60.0f) * M;
+		rad_pos3 += (dt * 1.0f * pi * 60.0f)   * scaler;
 
 		// one hour (at high speed) (Red)
-		end1.y = radius * cos(rad_pos1);
-		end1.x = radius * sin(rad_pos1);
+		end1.y = (radius + 1.0f) * cos(rad_pos1);
+		end1.x = (radius + 1.0f) * sin(rad_pos1);
 
 		// One minute (at high speed) (Aqua)
 		end2.y = radius * cos(rad_pos2);
 		end2.x = radius * sin(rad_pos2);
 
 		// one second (at high speed) (Violet)
-		end3.y = radius * cos(rad_pos3) - 0.5;
-		end3.x = radius * sin(rad_pos3) - 0.5;
+		end3.y = (radius - 0.5f) * cos(rad_pos3);
+		end3.x = (radius - 0.5f) * sin(rad_pos3);
 
 		debug.AddLineToList(Vector2D(start.x - 2.5, start.y), Vector2D(end1.x - 2.5, end1.y), Colors::Red);
 		debug.AddLineToList(Vector2D(start.x + 0.5, start.y), Vector2D(end2.x + 0.5, end2.y), Colors::Aqua);
