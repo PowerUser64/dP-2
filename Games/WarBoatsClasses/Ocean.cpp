@@ -14,11 +14,16 @@ namespace WarBoats
  */
 Ocean::Ocean(int num_boats_, int x_quadrants_, int y_quadrants_)
 {
-    grid = new int[x_quadrants * y_quadrants];
+    grid = new int[x_quadrants_ * y_quadrants_];
     hits = new int[num_boats_];
     num_boats = num_boats_;
     x_quadrants = x_quadrants_;
     y_quadrants = y_quadrants_;
+    
+    for (int i = 0; i < (x_quadrants_ * y_quadrants_); i++)    
+        grid[i] = 0;
+      
+    stats.hits = 0;
     stats.hits = 0;
     stats.duplicates = 0;
     stats.misses = 0;
@@ -58,14 +63,14 @@ BoatPlacement Ocean::PlaceBoat(const Boat &boat_)
             // Check for things beneath it
             for (int i = 0; i < BOAT_LENGTH; ++i)
             {
-                if (grid[boat_.position.x + x_quadrants * (boat_.position.y + i)] != 0)
+                if (grid[boat_.position.x + i + x_quadrants * (boat_.position.y)] != 0)
                     // couldn't be placed
                     return bpREJECTED;
             }
             // set the boat's spaces to the boat's id's
             for (int i = 0; i < BOAT_LENGTH; ++i)
             {
-                grid[boat_.position.x + x_quadrants * (boat_.position.y + i)] = boat_.ID;
+                grid[boat_.position.x + i + x_quadrants * (boat_.position.y)] = boat_.ID;
             }
             // could be placed
             return bpACCEPTED;
@@ -138,8 +143,7 @@ ShotResult Ocean::TakeShot(const Point &coordinate_)
     else if (dataAtLocation > 0 && dataAtLocation < 100)
     {
         ++stats.hits;
-        ++hits[dataAtLocation];
-        grid[dataAtLocation - 1] += 1;
+        ++hits[dataAtLocation - 1];
         if (hits[dataAtLocation - 1] == BOAT_LENGTH)
         {
             dataAtLocation += 100;
