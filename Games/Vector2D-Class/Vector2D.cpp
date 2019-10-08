@@ -1,6 +1,6 @@
 #include "Vector2D.h" // Vector2D members
 #include <cmath>      // sqrt, atan, sin, cos
-
+#define amigo friend
 namespace CS170
 {
 
