@@ -17,12 +17,20 @@ public:
 	// Accessors (2)
 	float X() const;
 	float Y() const;
+
+	// Mutators (2)
 	void X(float num);
 	void Y(float num);
 
-	// Mutators (2)
-
 	// Other functions (7)
+	float Magnitude();
+	Vector2D MagnitudeSquared();
+	Vector2D Normalized();
+
+	Vector2D Distance(Vector2D& source);
+	Vector2D DistanceSquared(Vector2D &source);
+
+	Vector2D Midpoint(Vector2D &source);
 
 	// Overloaded operators (9 member functions)
 

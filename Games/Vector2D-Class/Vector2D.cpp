@@ -41,18 +41,39 @@ void Vector2D::Y(float num)
   y = num;
 }
 // Other functions (7)
-// Vector2D Midpoint(&source)
-// {
-//   return 
-// }
-    // Operators (9)
-std::ostream &operator<<(std::ostream &os, const Vector2D &source)
+Vector2D Vector2D::Magnitude()
 {
-  os << '('<< source.X() << ',' << source.Y() << ')';
+  sqrt((x * x) + (y * y));
+}
+float Vector2D::MagnitudeSquared()
+{
+  (x * x) + (y * y);
+}
+Vector2D Vector2D::Normalized()
+{
+}
+
+Vector2D Vector2D::Distance(Vector2D &source)
+{
+}
+Vector2D Vector2D::DistanceSquared(Vector2D &source)
+{
+}
+
+Vector2D Vector2D::Midpoint(Vector2D &source)
+{
+  return Vector2D((source.x + this->x) / 2, (source.y + this->x) / 2);
+}
+
+// Operators (9)
+std::ostream &
+operator<<(std::ostream &os, const Vector2D &source)
+{
+  os << '(' << source.X() << ',' << source.Y() << ')';
   return os;
 }
 
-  ///////////////////////////////////////////////////////////////////////////////
-  // 2 non-member, non-friend functions (operators)
+///////////////////////////////////////////////////////////////////////////////
+// 2 non-member, non-friend functions (operators)
 
 } // namespace CS170
