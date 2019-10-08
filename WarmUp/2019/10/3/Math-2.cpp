@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cmath>
+#include "linalg.h"
 
 #define pi M_PIf64
 #define filler "💢" // "🌠" "🐱‍🐉"
