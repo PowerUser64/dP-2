@@ -24,15 +24,19 @@ public:
 
 	// Other functions (7)
 	float Magnitude();
-	Vector2D MagnitudeSquared();
+	float MagnitudeSquared();
 	Vector2D Normalized();
 
-	Vector2D Distance(Vector2D& source);
-	Vector2D DistanceSquared(Vector2D &source);
+	float Distance(Vector2D &source);
+	float DistanceSquared(Vector2D &source);
 
 	Vector2D Midpoint(Vector2D &source);
+	float DotProduct(Vector2D &source);
 
 	// Overloaded operators (9 member functions)
+	Vector2D operator+(const Vector2D &source);
+	Vector2D operator-(const Vector2D &source);
+	Vector2D operator*(const Vector2D &source);
 
 private:
 	float x; // The x-coordinate of a Vector2D

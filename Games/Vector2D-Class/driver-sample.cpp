@@ -1,49 +1,49 @@
 #include <iostream>   // cin, cout, endl
 #include "Vector2D.h" // Vector2D class
 
-// void ConstructorTest(void)
-// {
-// 	std::cout << "\n********** Constructor test ********** " << std::endl;
+void ConstructorTest(void)
+{
+	std::cout << "\n********** Constructor test ********** " << std::endl;
 
-// 	CS170::Vector2D v1(3.0f, 4.0f);
-// 	CS170::Vector2D v2;
-// 	CS170::Vector2D v3(v1);
-// 	CS170::Vector2D v4 = v1;
-// 	CS170::Vector2D v5;
+	CS170::Vector2D v1(3.0f, 4.0f);
+	CS170::Vector2D v2;
+	CS170::Vector2D v3(v1);
+	CS170::Vector2D v4 = v1;
+	CS170::Vector2D v5;
 
-// 	v5 = v4;
+	v5 = v4;
 
-// 	// DO NOT ALLOW THIS SYNTAX:
-// 	//CS170::Vector2D p6 = 4; // this should not compile
-// 	//CS170::Vector2D p7(4);  // this should not compile
+	// DO NOT ALLOW THIS SYNTAX:
+	//CS170::Vector2D p6 = 4; // this should not compile
+	//CS170::Vector2D p7(4);  // this should not compile
 
-// 	std::cout << "Vector2D v1(3, 4): " << v1 << std::endl;
-// 	std::cout << "Vector2D v2: " << v2 << std::endl;
-// 	std::cout << "Vector2D v3(v1): " << v3 << std::endl;
-// 	std::cout << "Vector2D v4 = v1: " << v3 << std::endl;
-// 	std::cout << "v5 = v4: " << v5 << std::endl;
+	std::cout << "Vector2D v1(3, 4): " << v1 << std::endl;
+	std::cout << "Vector2D v2: " << v2 << std::endl;
+	std::cout << "Vector2D v3(v1): " << v3 << std::endl;
+	std::cout << "Vector2D v4 = v1: " << v3 << std::endl;
+	std::cout << "v5 = v4: " << v5 << std::endl;
 
-// 	std::cout << std::endl;
-// }
+	std::cout << std::endl;
+}
 
-// void GetSetTest(void)
-// {
-// 	std::cout << "\n********** Get and Set test ********** " << std::endl;
+void GetSetTest(void)
+{
+	std::cout << "\n********** Get and Set test ********** " << std::endl;
 
-// 	CS170::Vector2D v1(9.0f, -5.0f);
-// 	std::cout << "v1.x = " << v1.X() << std::endl;
-// 	std::cout << "v1.y = " << v1.Y() << std::endl;
+	CS170::Vector2D v1(9.0f, -5.0f);
+	std::cout << "v1.x = " << v1.X() << std::endl;
+	std::cout << "v1.y = " << v1.Y() << std::endl;
 
-// 	v1.X(4.0f);
-// 	std::cout << "v1.x = 4.0f" << std::endl;
-// 	std::cout << "v1.x = " << v1.X() << std::endl;
+	v1.X(4.0f);
+	std::cout << "v1.x = 4.0f" << std::endl;
+	std::cout << "v1.x = " << v1.X() << std::endl;
 
-// 	v1.Y(9.0f);
-// 	std::cout << "v1.y = 9.0f" << std::endl;
-// 	std::cout << "v1.y = " << v1.Y() << std::endl;
+	v1.Y(9.0f);
+	std::cout << "v1.y = 9.0f" << std::endl;
+	std::cout << "v1.y = " << v1.Y() << std::endl;
 
-// 	std::cout << std::endl;
-// }
+	std::cout << std::endl;
+}
 
 void MagnitudeTest(void)
 {
@@ -117,46 +117,46 @@ void MidpointTest(void)
 	std::cout.precision(6);
 }
 
-// void DotTest(void)
-// {
-// 	std::cout << "\n********** Dot test ********** " << std::endl;
+void DotTest(void)
+{
+	std::cout << "\n********** Dot test ********** " << std::endl;
 
-// 	CS170::Vector2D v1(3.0f, 4.0f);
-// 	CS170::Vector2D v2(7.0f, 12.0f);
+	CS170::Vector2D v1(3.0f, 4.0f);
+	CS170::Vector2D v2(7.0f, 12.0f);
 
-// 	std::cout << "v1 = " << v1 << std::endl;
-// 	std::cout << "v2 = " << v2 << std::endl;
-// 	std::cout << "v1 dot v2 = " << v1.DotProduct(v2) << std::endl;
-// 	std::cout << "v2 dot v1 = " << v2.DotProduct(v1) << std::endl;
-// 	std::cout << std::endl;
+	std::cout << "v1 = " << v1 << std::endl;
+	std::cout << "v2 = " << v2 << std::endl;
+	std::cout << "v1 dot v2 = " << v1.DotProduct(v2) << std::endl;
+	std::cout << "v2 dot v1 = " << v2.DotProduct(v1) << std::endl;
+	std::cout << std::endl;
 
-// 	CS170::Vector2D v3(2.0f, 4.0f);
-// 	CS170::Vector2D v4(-8.0f, 4.0f);
+	CS170::Vector2D v3(2.0f, 4.0f);
+	CS170::Vector2D v4(-8.0f, 4.0f);
 
-// 	std::cout << "v3 = " << v3 << std::endl;
-// 	std::cout << "v4 = " << v4 << std::endl;
-// 	std::cout << "v3 dot v4 = " << v3.DotProduct(v4) << std::endl;
-// 	std::cout << "v4 dot v3 = " << v4.DotProduct(v3) << std::endl;
-// 	std::cout << std::endl;
-// }
+	std::cout << "v3 = " << v3 << std::endl;
+	std::cout << "v4 = " << v4 << std::endl;
+	std::cout << "v3 dot v4 = " << v3.DotProduct(v4) << std::endl;
+	std::cout << "v4 dot v3 = " << v4.DotProduct(v3) << std::endl;
+	std::cout << std::endl;
+}
 
-// void AddSubtractTest(void)
-// {
-// 	std::cout << "\n********** Add and Subtract test ********** " << std::endl;
+void AddSubtractTest(void)
+{
+	std::cout << "\n********** Add and Subtract test ********** " << std::endl;
 
-// 	CS170::Vector2D v1(3.0f, 4.0f);
-// 	CS170::Vector2D v2(7.0f, 12.0f);
-// 	CS170::Vector2D v3;
+	CS170::Vector2D v1(3.0f, 4.0f);
+	CS170::Vector2D v2(7.0f, 12.0f);
+	CS170::Vector2D v3;
 
-// 	v3 = v1 + v2;
-// 	std::cout << v1 << " + " << v2 << " = " << v3 << std::endl;
+	v3 = v1 + v2;
+	std::cout << v1 << " + " << v2 << " = " << v3 << std::endl;
 
-// 	CS170::Vector2D v4;
-// 	v4 = v2 - v1;
-// 	std::cout << v2 << " - " << v1 << " = " << v4 << std::endl;
+	CS170::Vector2D v4;
+	v4 = v2 - v1;
+	std::cout << v2 << " - " << v1 << " = " << v4 << std::endl;
 
-// 	std::cout << std::endl;
-// }
+	std::cout << std::endl;
+}
 
 // void ScaleTest(void)
 // {
@@ -256,13 +256,13 @@ void MidpointTest(void)
 
 int main(void)
 {
-	// ConstructorTest();
-	// GetSetTest();
+	ConstructorTest();
+	GetSetTest();
 	MagnitudeTest();
 	DistanceTest();
 	MidpointTest();
-	// DotTest();
-	// AddSubtractTest();
+	DotTest();
+	AddSubtractTest();
 	// ScaleTest();
 	// AssignmentTest1();
 	// AssignmentTest2();

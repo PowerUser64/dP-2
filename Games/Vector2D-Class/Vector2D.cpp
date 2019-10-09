@@ -41,39 +41,64 @@ void Vector2D::Y(float num)
   y = num;
 }
 // Other functions (7)
-Vector2D Vector2D::Magnitude()
+float Vector2D::Magnitude()
 {
-  sqrt((x * x) + (y * y));
+  return sqrt((x * x) + (y * y));
 }
 float Vector2D::MagnitudeSquared()
 {
-  (x * x) + (y * y);
+  return (x * x) + (y * y);
 }
 Vector2D Vector2D::Normalized()
 {
+  return Vector2D(x / Magnitude(), y / Magnitude());
 }
 
-Vector2D Vector2D::Distance(Vector2D &source)
+float Vector2D::Distance(Vector2D &source)
 {
+  return sqrt(((source.x - x) * (source.x - x)) + ((source.y - y) * (source.y - y)));
 }
-Vector2D Vector2D::DistanceSquared(Vector2D &source)
+float Vector2D::DistanceSquared(Vector2D &source)
 {
+  return ((source.x - x) * (source.x - x)) + ((source.y - y) * (source.y - y));
 }
 
 Vector2D Vector2D::Midpoint(Vector2D &source)
 {
-  return Vector2D((source.x + this->x) / 2, (source.y + this->x) / 2);
+  return Vector2D((source.x + this->x) / 2, (source.y + this->y) / 2);
+}
+float Vector2D::DotProduct(Vector2D &source)
+{
+  return (source.x * x) + (source.y * y);
 }
 
 // Operators (9)
-std::ostream &
-operator<<(std::ostream &os, const Vector2D &source)
+Vector2D Vector2D::operator+(const Vector2D &source)
 {
-  os << '(' << source.X() << ',' << source.Y() << ')';
-  return os;
+  return Vector2D(x + source.x, y + source.y);
 }
+
+Vector2D Vector2D::operator-(const Vector2D &source)
+{
+  return Vector2D(x - source.x, y - source.y);
+}
+
+// Vector2D Vector2D::operator*(const Vector2D &source)
+// {
+//   return Vector2D(x * source.x, y * source.y);
+// }
+
+// Vector2D Vector2D::operator*(const Vector2D &source)
+// {
+//   return Vector2D(x / source.x, y / source.y);
+// }
 
 ///////////////////////////////////////////////////////////////////////////////
 // 2 non-member, non-friend functions (operators)
+std::ostream &operator<<(std::ostream &os, const Vector2D &source)
+{
+  os << '(' << source.X() << ", " << source.Y() << ')';
+  return os;
+}
 
 } // namespace CS170
