@@ -37,6 +37,9 @@ public:
 	Vector2D operator+(const Vector2D &source);
 	Vector2D operator-(const Vector2D &source);
 	Vector2D operator*(const Vector2D &source);
+	Vector2D operator*(const float &source);
+	Vector2D operator/(const Vector2D &source);
+	Vector2D operator/(const float &source);
 
 private:
 	float x; // The x-coordinate of a Vector2D
@@ -45,7 +48,7 @@ private:
 
 // Overloaded operators (2 non-member, non-friend functions)
 std::ostream &operator<<(std::ostream &os, const Vector2D &source);
-
+Vector2D operator*(const float &floating, Vector2D &source);
 } // namespace CS170
 
 #endif

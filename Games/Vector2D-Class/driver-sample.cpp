@@ -158,78 +158,78 @@ void AddSubtractTest(void)
 	std::cout << std::endl;
 }
 
-// void ScaleTest(void)
-// {
-// 	std::cout << "\n********** Scale test ********** " << std::endl;
+void ScaleTest(void)
+{
+	std::cout << "\n********** Scale test ********** " << std::endl;
 
-// 	CS170::Vector2D v1(3.0f, 4.0f);
-// 	CS170::Vector2D v2 = v1 * 3.0f;
-// 	std::cout << v1 << " * 3 = " << v2 << std::endl;
-// 	std::cout << std::endl;
+	CS170::Vector2D v1(3.0f, 4.0f);
+	CS170::Vector2D v2 = v1 * 3.0f;
+	std::cout << v1 << " * 3 = " << v2 << std::endl;
+	std::cout << std::endl;
 
-// 	CS170::Vector2D v3(5.0f, 8.0f);
-// 	CS170::Vector2D v4 = 5.0f * v3;
-// 	std::cout << "5 * " << v3 << " = " << v4 << std::endl;
-// 	std::cout << std::endl;
+	CS170::Vector2D v3(5.0f, 8.0f);
+	CS170::Vector2D v4 = 5.0f * v3;
+	std::cout << "5 * " << v3 << " = " << v4 << std::endl;
+	std::cout << std::endl;
 
-// 	std::cout << v4 << " / 3 = " << v4 / 3.0f << std::endl;
-// 	std::cout << std::endl;
-// }
+	std::cout << v4 << " / 3 = " << v4 / 3.0f << std::endl;
+	std::cout << std::endl;
+}
 
-// void AssignmentTest1(void)
-// {
-// 	std::cout << "\n********** Assignment test 1 ********** " << std::endl;
+void AssignmentTest1(void)
+{
+	std::cout << "\n********** Assignment test 1 ********** " << std::endl;
 
-// 	CS170::Vector2D v1(3.0f, 4.0f);
-// 	CS170::Vector2D v2(-5.0f, 1.0f);
+	CS170::Vector2D v1(3.0f, 4.0f);
+	CS170::Vector2D v2(-5.0f, 1.0f);
 
-// 	std::cout << "v1 = " << v1 << std::endl;
-// 	std::cout << "v2 = " << v2 << std::endl;
-// 	v1 += v2;
-// 	std::cout << "v1 += v2" << std::endl;
-// 	std::cout << "v1 = " << v1 << std::endl;
-// 	std::cout << "v2 = " << v2 << std::endl;
+	std::cout << "v1 = " << v1 << std::endl;
+	std::cout << "v2 = " << v2 << std::endl;
+	v1 += v2;
+	std::cout << "v1 += v2" << std::endl;
+	std::cout << "v1 = " << v1 << std::endl;
+	std::cout << "v2 = " << v2 << std::endl;
 
-// 	std::cout << std::endl;
+	std::cout << std::endl;
 
-// 	CS170::Vector2D v3(3.0f, 4.0f);
-// 	std::cout << "v3 = " << v3 << std::endl;
+	CS170::Vector2D v3(3.0f, 4.0f);
+	std::cout << "v3 = " << v3 << std::endl;
 
-// 	std::cout << std::endl;
+	std::cout << std::endl;
 
-// 	v1 += v2 += v3;
-// 	std::cout << "v1 += v2 += v3" << std::endl;
-// 	std::cout << "v1 = " << v1 << std::endl;
-// 	std::cout << "v2 = " << v2 << std::endl;
-// 	std::cout << "v3 = " << v3 << std::endl;
-// }
+	v1 += v2 += v3;
+	std::cout << "v1 += v2 += v3" << std::endl;
+	std::cout << "v1 = " << v1 << std::endl;
+	std::cout << "v2 = " << v2 << std::endl;
+	std::cout << "v3 = " << v3 << std::endl;
+}
 
-// void AssignmentTest2(void)
-// {
-// 	std::cout << "\n********** Assignment test 2 ********** " << std::endl;
+void AssignmentTest2(void)
+{
+	std::cout << "\n********** Assignment test 2 ********** " << std::endl;
 
-// 	CS170::Vector2D v1(1.0f, 2.0f);
-// 	std::cout << "v1 = " << v1 << std::endl;
-// 	CS170::Vector2D v2(-9.0f, 12.0f);
-// 	std::cout << "v2 = " << v2 << std::endl;
-// 	v1 -= v2;
-// 	std::cout << "v1 -= v2 " << std::endl;
-// 	std::cout << "v1 = " << v1 << std::endl;
+	CS170::Vector2D v1(1.0f, 2.0f);
+	std::cout << "v1 = " << v1 << std::endl;
+	CS170::Vector2D v2(-9.0f, 12.0f);
+	std::cout << "v2 = " << v2 << std::endl;
+	v1 -= v2;
+	std::cout << "v1 -= v2 " << std::endl;
+	std::cout << "v1 = " << v1 << std::endl;
 
-// 	std::cout << std::endl;
+	std::cout << std::endl;
 
-// 	CS170::Vector2D v3(7.0f, 3.0f);
-// 	std::cout << "v3 = " << v3 << std::endl;
-// 	v3 *= -2.5f;
-// 	std::cout << "v3 *= -2.5" << std::endl;
-// 	std::cout << "v3 = " << v3 << std::endl;
-// 	std::cout << std::endl;
+	CS170::Vector2D v3(7.0f, 3.0f);
+	std::cout << "v3 = " << v3 << std::endl;
+	v3 *= -2.5f;
+	std::cout << "v3 *= -2.5" << std::endl;
+	std::cout << "v3 = " << v3 << std::endl;
+	std::cout << std::endl;
 
-// 	std::cout << "v3 /= 4" << std::endl;
-// 	v3 /= 4.0f;
-// 	std::cout << "v3 = " << v3 << std::endl;
-// 	std::cout << std::endl;
-// }
+	std::cout << "v3 /= 4" << std::endl;
+	v3 /= 4.0f;
+	std::cout << "v3 = " << v3 << std::endl;
+	std::cout << std::endl;
+}
 
 // void UnaryTest(void)
 // {
@@ -263,9 +263,9 @@ int main(void)
 	MidpointTest();
 	DotTest();
 	AddSubtractTest();
-	// ScaleTest();
-	// AssignmentTest1();
-	// AssignmentTest2();
+	ScaleTest();
+	AssignmentTest1();
+	AssignmentTest2();
 	// UnaryTest();
 
 	return 0;

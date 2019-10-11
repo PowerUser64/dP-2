@@ -54,51 +54,60 @@ Vector2D Vector2D::Normalized()
   return Vector2D(x / Magnitude(), y / Magnitude());
 }
 
-float Vector2D::Distance(Vector2D &source)
+float Vector2D::Distance(Vector2D &var)
 {
-  return sqrt(((source.x - x) * (source.x - x)) + ((source.y - y) * (source.y - y)));
+  return sqrt(((var.x - x) * (var.x - x)) + ((var.y - y) * (var.y - y)));
 }
-float Vector2D::DistanceSquared(Vector2D &source)
+float Vector2D::DistanceSquared(Vector2D &var)
 {
-  return ((source.x - x) * (source.x - x)) + ((source.y - y) * (source.y - y));
+  return ((var.x - x) * (var.x - x)) + ((var.y - y) * (var.y - y));
 }
 
-Vector2D Vector2D::Midpoint(Vector2D &source)
+Vector2D Vector2D::Midpoint(Vector2D &var)
 {
-  return Vector2D((source.x + this->x) / 2, (source.y + this->y) / 2);
+  return Vector2D((var.x + this->x) / 2, (var.y + this->y) / 2);
 }
-float Vector2D::DotProduct(Vector2D &source)
+float Vector2D::DotProduct(Vector2D &var)
 {
-  return (source.x * x) + (source.y * y);
+  return (var.x * x) + (var.y * y);
 }
 
 // Operators (9)
-Vector2D Vector2D::operator+(const Vector2D &source)
+Vector2D Vector2D::operator+(const Vector2D &var)
 {
-  return Vector2D(x + source.x, y + source.y);
+  return Vector2D(x + var.x, y + var.y);
+}
+Vector2D Vector2D::operator-(const Vector2D &var)
+{
+  return Vector2D(x - var.x, y - var.y);
 }
 
-Vector2D Vector2D::operator-(const Vector2D &source)
+Vector2D Vector2D::operator*(const float &var)
 {
-  return Vector2D(x - source.x, y - source.y);
+  return Vector2D(var * x, var * y);
 }
 
-// Vector2D Vector2D::operator*(const Vector2D &source)
-// {
-//   return Vector2D(x * source.x, y * source.y);
-// }
+Vector2D Vector2D::operator/(const float &var)
+{
+  return Vector2D(x / var, y / var);
+}
 
-// Vector2D Vector2D::operator*(const Vector2D &source)
-// {
-//   return Vector2D(x / source.x, y / source.y);
-// }
+Vector2D Vector2D::operator+=(const float &var)
+{
+  return Vector2D(x + var.x, y + var.y);
+}
 
 ///////////////////////////////////////////////////////////////////////////////
 // 2 non-member, non-friend functions (operators)
-std::ostream &operator<<(std::ostream &os, const Vector2D &source)
+std::ostream &operator<<(std::ostream &os, const Vector2D &var)
 {
-  os << '(' << source.X() << ", " << source.Y() << ')';
+  os << '(' << var.X() << ", " << var.Y() << ')';
   return os;
+}
+
+Vector2D operator*(const float &floating, Vector2D &var)
+{
+  return Vector2D(floating * var.X(), floating * var.Y());
 }
 
 } // namespace CS170
