@@ -11,7 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Lab1.cpp" />
+    <ClCompile Include="Source\Animator.cpp" />
+    <ClCompile Include="Source\Lab2.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -19,13 +20,14 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Source\Lab1.h" />
+    <ClInclude Include="Source\Animator.h" />
+    <ClInclude Include="Source\Lab2.h" />
     <ClInclude Include="Source\stdafx.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{553D497C-DD10-4B3D-9F5A-CC4267744407}</ProjectGuid>
-    <RootNamespace>BetaLowLevelTemplate</RootNamespace>
+    <RootNamespace>Lab2</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -56,15 +58,15 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <TargetName>BetaExamples</TargetName>
-    <IncludePath>LowLevelAPI\include;glfw\include;$(IncludePath)</IncludePath>
-    <LibraryPath>LowLevelAPI\lib;glfw\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>LowLevelAPI\include;$(IncludePath)</IncludePath>
+    <LibraryPath>LowLevelAPI\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TargetName>BetaExamples</TargetName>
-    <IncludePath>LowLevelAPI\include;glfw\include;$(IncludePath)</IncludePath>
-    <LibraryPath>LowLevelAPI\lib;glfw\lib\x64;$(LibraryPath)</LibraryPath>
+    <IncludePath>LowLevelAPI\include;$(IncludePath)</IncludePath>
+    <LibraryPath>LowLevelAPI\lib;$(LibraryPath)</LibraryPath>
     <OutDir>$(ProjectDir)\$(Platform)\$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)\$(Platform)\$(Configuration)\</IntDir>
   </PropertyGroup>
@@ -79,11 +81,10 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>BetaLow_x64_D.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <IgnoreSpecificDefaultLibraries>msvcrt.lib</IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy LowLevelAPI\lib\BetaLow_x64_D.dll "$(OutDir)" /Y
-xcopy FreeType\lib\win64\freetype.dll "$(OutDir)" /Y</Command>
+      <Command>xcopy FreeType\lib\win64\freetype.dll "$(OutDir)" /Y
+xcopy LowLevelAPI\lib\BetaLow_x64_D.dll "$(OutDir)" /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -103,8 +104,8 @@ xcopy FreeType\lib\win64\freetype.dll "$(OutDir)" /Y</Command>
       <AdditionalDependencies>BetaLow_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy LowLevelAPI\lib\BetaLow_x64.dll "$(OutDir)" /Y
-xcopy FreeType\lib\win64\freetype.dll "$(OutDir)" /Y</Command>
+      <Command>xcopy FreeType\lib\win64\freetype.dll "$(OutDir)" /Y
+xcopy LowLevelAPI\lib\BetaLow_x64.dll "$(OutDir)" /Y</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
