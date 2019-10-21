@@ -91,10 +91,43 @@ Vector2D Vector2D::operator/(const float &var)
 {
   return Vector2D(x / var, y / var);
 }
-
-Vector2D Vector2D::operator+=(const float &var)
+/* 
+ */
+Vector2D Vector2D::operator+=(const Vector2D &var)
 {
-  return Vector2D(x + var.x, y + var.y);
+  x += var.x;
+  y += var.y;
+  return *this;
+}
+Vector2D Vector2D::operator-=(const Vector2D &var)
+{
+  x -= var.x;
+  y -= var.y;
+  return *this;
+}
+Vector2D Vector2D::operator*=(const Vector2D &var)
+{
+  x *= var.x;
+  y *= var.y;
+  return *this;
+}
+Vector2D Vector2D::operator*=(const float &var)
+{
+  x *= var.x;
+  y *= var.y;
+  return *this;
+}
+Vector2D Vector2D::operator/=(const Vector2D &var)
+{
+  x += var.x;
+  y += var.y;
+  return *this;
+}
+Vector2D Vector2D::operator/=(const float &var)
+{
+  x += var.x;
+  y += var.y;
+  return *this;
 }
 
 ///////////////////////////////////////////////////////////////////////////////

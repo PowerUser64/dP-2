@@ -40,6 +40,11 @@ public:
 	Vector2D operator*(const float &source);
 	Vector2D operator/(const Vector2D &source);
 	Vector2D operator/(const float &source);
+	
+	Vector2D operator+=(const Vector2D &var);
+	Vector2D operator-=(const Vector2D &var);
+	Vector2D operator*=(const Vector2D &var);
+	Vector2D operator/=(const Vector2D &var);
 
 private:
 	float x; // The x-coordinate of a Vector2D
