@@ -24,20 +24,20 @@
                 // executable name --------------------------------------------
                 
                 // Multi file projects
-                //   "${fileDirname}/Vect2D.exe",
+                  "${fileDirname}/Vect2D.exe",
                 
                 // Single file projects
-                  "${fileDirname}/${fileBasenameNoExtension}.exe",
+                //   "${fileDirname}/${fileBasenameNoExtension}.exe",
                 
                 // Files to compile -------------------------------------------
                 // Multi file projects
-                // "${fileDirname}/Vector2D.cpp",
-                // "${fileDirname}/driver-sample.cpp",
-                // "${fileDirname}/driver_big.cpp",
-                // "${fileDirname}/PRNG.cpp",
+                  "${fileDirname}/Vector2D.cpp",
+                  "${fileDirname}/driver-sample.cpp",
+                //   "${fileDirname}/driver_big.cpp",
+                //   "${fileDirname}/PRNG.cpp",
                 
                 // Single file projects 
-                  "${relativeFile}",
+                //   "${relativeFile}",
             ],
             "problemMatcher": {
                 "owner": "cpp",

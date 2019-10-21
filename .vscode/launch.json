@@ -10,9 +10,9 @@
             "type": "cppdbg",
             "request": "launch",
             // Multi file
-                // "program": "${fileDirname}/Vect2D.exe",
+                "program": "${fileDirname}/Vect2D.exe",
             // Single file
-                "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+                // "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
             
             "args": [],
             "stopAtEntry": false,
