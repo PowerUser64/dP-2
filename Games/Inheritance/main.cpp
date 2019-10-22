@@ -3,6 +3,22 @@
 #include "Rectangle.h"
 #include "Polygon.h"
 
+/*     /-------------\
+ *     |    Shape    |
+ *     \-------------/
+ *            |
+ *     /------|------\
+ *    |              |
+ * /--------\   /---------------------\
+ * | Circle |   | Shape_With_Vertices |
+ * \--------/   \---------------------/
+ *                       |
+ *              /-------/\------\
+ *       /-----------\     /---------\
+ *       | Rectangle |     | Polygon |
+ *       \-----------/     \---------/
+ */
+
 void TestingTheCircleClass(void)
 {
     std::cout << "Testing The Circle Class:" << std::endl;
