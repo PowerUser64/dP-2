@@ -5,7 +5,7 @@
 // Project:		BetaFramework
 // Course:		WANIC VGP2 2018-2019
 //
-// Copyright © 2018 DigiPen (USA) Corporation.
+// Copyright ï¿½ 2018 DigiPen (USA) Corporation.
 //
 //------------------------------------------------------------------------------
 
@@ -45,12 +45,28 @@ void Level1::Initialize()
 	testObject->AddComponent(transform);
 
 	// Create a sprite component and set its mesh and sprite source
+	TexturePtr texture = ResourceGetTexture("Monkey.png");
+	SpriteSourcePtr spriteSource = std::make_shared<SpriteSource>(texture, "Monkey", 3, 5);
 	Sprite* sprite = new Sprite();
 	sprite->SetColor(Colors::Green);
+	sprite->SetSpriteSource(spriteSource);
 	testObject->AddComponent(sprite);
 
+	Animator* animator = new Animator();
+	testObject->AddComponent(animator);
+	AnimationPtr walkAnim = std::make_shared<Animation>("MonkeyWalk", spriteSource, 8, 0, 0.01);
+
+	// add amins to animator
+	size_t walkIndex = animator->AddAnimation(walkAnim);
+
 	// Initialize the object
-	testObject->Initialize();
+	// testObject->Initialize();
+	// OR...
+	GetSpace()->GetObjectManager().AddObject(*testObject);
+
+	// play walk anims
+	animator->Play(walkIndex);
+	
 }
 
 // Update the Level1 game state.
@@ -66,22 +82,24 @@ void Level1::Update(float dt)
 		GetSpace()->RestartLevel();
 
 	// If the user presses the 'D' key, delete the object
-	if (input->CheckTriggered('D'))
-	{
-		delete testObject;
-		testObject = nullptr;
-	}
+	// if (input->CheckTriggered('D'))
+	// {
+	// 	testObject->Destroy();
+	// 	testObject = nullptr;
+	// }
 
+	// handled by obj manager
 	// If the object exists
-	if (testObject)
-	{
+	// if (testObject)
+	// {
 		// Update and draw
-		testObject->Update(dt);
-		testObject->Draw();
-	}
+		// testObject->Update(dt);
+		// testObject->Draw();
+	// }
 	
 	Transform* transform = testObject->GetComponent<Transform>();
 	Vector2D position = transform->GetTranslation();
+	float rot = transform->GetRotation();
 
 	if (input->CheckHeld(VK_RIGHT))
 		position.x += 2.0f * dt;
@@ -92,12 +110,19 @@ void Level1::Update(float dt)
 	if (input->CheckHeld(VK_LEFT))
 		position.x -= 2.0f * dt;
 	transform->SetTranslation(position);
+
+	if (input->CheckHeld('.'))
+		rot += 2.0f * dt;
+	if (input->CheckHeld(','))
+		rot -= 2.0f * dt;
+	transform->SetRotation(rot);
 }
 
 // Shutdown any memory associated with the Level1 game state.
 void Level1::Shutdown()
 {
 	std::cout << "Level1::Shutdown" << std::endl;
-
-	delete testObject;
+	
+	// handled by obj manager
+	// delete testObject;
 }
