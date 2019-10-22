@@ -1,0 +1,15 @@
+Testing Polymorphism:
+----------------------
+Drawing a circle at x = 10 y = 10 and radius 5
+
+Drawing a rectangle at x = 30 y = 30 with width = 10 and height = 5
+Vertex 0 (25, 32.5)
+Vertex 1 (35, 32.5)
+Vertex 2 (35, 27.5)
+Vertex 3 (25, 27.5)
+
+Drawing a polygon at x = 50 y = 50
+Vertex 0 (55, 50)
+Vertex 1 (50, 65)
+Vertex 2 (45, 50)
+

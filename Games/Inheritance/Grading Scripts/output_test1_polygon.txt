@@ -1,0 +1,46 @@
+Testing The Polygon Class:
+---------------------------
+Polygon 1:
+-----------
+Drawing a polygon at x = 0 y = 0
+Vertex 0 (0, 0)
+Vertex 1 (0, 0)
+Vertex 2 (0, 0)
+
+Drawing a polygon at x = 0 y = 0
+Vertex 0 (5, 0)
+Vertex 1 (0, 15)
+Vertex 2 (-5, 0)
+
+Polygon 2:
+-----------
+Drawing a polygon at x = 0 y = 0
+Vertex 0 (5, 0)
+Vertex 1 (0, 15)
+Vertex 2 (-5, 0)
+
+Polygon 3:
+-----------
+Drawing a polygon at x = 10 y = 10
+Vertex 0 (15, 10)
+Vertex 1 (10, 25)
+Vertex 2 (5, 10)
+Vertex 3 (10, -5)
+
+Drawing a polygon at x = 15 y = 15
+Vertex 0 (20, 15)
+Vertex 1 (15, 30)
+Vertex 2 (10, 15)
+Vertex 3 (15, 0)
+
+Bad vertex index provided
+
+Polygon 4:
+-----------
+Drawing a polygon at x = 20 y = 20
+Vertex 0 (25, 20)
+Vertex 1 (20, 35)
+Vertex 2 (15, 20)
+Vertex 3 (20, 5)
+
+

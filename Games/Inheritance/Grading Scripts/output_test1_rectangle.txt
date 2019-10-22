@@ -1,0 +1,41 @@
+Testing The Rectangle Class:
+-------------------------
+Rectangle 1:
+---------
+Drawing a rectangle at x = 0 y = 0 with width = 10 and height = 5
+Vertex 0 (-5, 2.5)
+Vertex 1 (5, 2.5)
+Vertex 2 (5, -2.5)
+Vertex 3 (-5, -2.5)
+
+Rectangle 2:
+---------
+Drawing a rectangle at x = 0 y = 0 with width = 10 and height = 5
+Vertex 0 (-5, 2.5)
+Vertex 1 (5, 2.5)
+Vertex 2 (5, -2.5)
+Vertex 3 (-5, -2.5)
+
+Rectangle 3:
+---------
+Drawing a rectangle at x = 10 y = 10 with width = 10 and height = 10
+Vertex 0 (5, 15)
+Vertex 1 (15, 15)
+Vertex 2 (15, 5)
+Vertex 3 (5, 5)
+
+Drawing a rectangle at x = 15 y = 15 with width = 10 and height = 10
+Vertex 0 (10, 20)
+Vertex 1 (20, 20)
+Vertex 2 (20, 10)
+Vertex 3 (10, 10)
+
+Rectangle 4:
+---------
+Drawing a rectangle at x = 20 y = 20 with width = 12 and height = 4
+Vertex 0 (14, 22)
+Vertex 1 (26, 22)
+Vertex 2 (26, 18)
+Vertex 3 (14, 18)
+
+

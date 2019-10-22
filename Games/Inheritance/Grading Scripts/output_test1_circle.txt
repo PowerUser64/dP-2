@@ -1,0 +1,21 @@
+Testing The Circle Class:
+-------------------------
+Circle 1:
+---------
+Drawing a circle at x = 10 y = 10 and radius 5
+
+Circle 2:
+---------
+Drawing a circle at x = 10 y = 10 and radius 5
+
+Circle 3:
+---------
+Drawing a circle at x = 0 y = 0 and radius 10
+
+Drawing a circle at x = 15 y = 15 and radius 10
+
+Circle 4:
+---------
+Drawing a circle at x = 20 y = 20 and radius 3
+
+
