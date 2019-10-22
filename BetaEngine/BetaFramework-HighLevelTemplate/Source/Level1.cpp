@@ -100,20 +100,25 @@ void Level1::Update(float dt)
 	Transform* transform = testObject->GetComponent<Transform>();
 	Vector2D position = transform->GetTranslation();
 	float rot = transform->GetRotation();
+	Vector2D direction = Vector2D::FromAngleRadians(rot);
+	Vector2D directionUp = Vector2D(-direction.y, direction.x);
+
+	float speed = 2;
+
+	if (input->CheckHeld(VK_UP))
+		position += directionUp * speed * dt;
+	if (input->CheckHeld(VK_DOWN))
+		position -= directionUp * speed * dt;
 
 	if (input->CheckHeld(VK_RIGHT))
-		position.x += 2.0f * dt;
-	if (input->CheckHeld(VK_UP))
-		position.y += 2.0f * dt;
-	if (input->CheckHeld(VK_DOWN))
-		position.y -= 2.0f * dt;
+		position += direction * speed * dt;
 	if (input->CheckHeld(VK_LEFT))
-		position.x -= 2.0f * dt;
+		position -= direction * speed * dt;
 	transform->SetTranslation(position);
 
-	if (input->CheckHeld('.'))
+	if (input->CheckHeld('M'))
 		rot += 2.0f * dt;
-	if (input->CheckHeld(','))
+	if (input->CheckHeld('N'))
 		rot -= 2.0f * dt;
 	transform->SetRotation(rot);
 }
