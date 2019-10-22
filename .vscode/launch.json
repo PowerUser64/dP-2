@@ -10,7 +10,7 @@
             "type": "cppdbg",
             "request": "launch",
             // Multi file
-                "program": "${fileDirname}/Vect2D.exe",
+                "program": "${fileDirname}/Inheritance.exe",
             // Single file
                 // "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
             

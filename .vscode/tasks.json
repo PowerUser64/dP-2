@@ -24,15 +24,17 @@
                 // executable name --------------------------------------------
                 
                 // Multi file projects
-                  "${fileDirname}/Vect2D.exe",
+                  "${fileDirname}/Inheritance.exe",
                 
                 // Single file projects
                 //   "${fileDirname}/${fileBasenameNoExtension}.exe",
                 
                 // Files to compile -------------------------------------------
-                // Multi file projects
-                  "${fileDirname}/Vector2D.cpp",
-                  "${fileDirname}/driver-sample.cpp",
+                // Multi file projects "${fileDirname}/*",
+                  "${fileDirname}/main.cpp",
+                  "${fileDirname}/Point.cpp"
+                //   "${fileDirname}/Vector2D.cpp",
+                //   "${fileDirname}/driver-sample.cpp",
                 //   "${fileDirname}/driver_big.cpp",
                 //   "${fileDirname}/PRNG.cpp",
                 
