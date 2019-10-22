@@ -231,28 +231,28 @@ void AssignmentTest2(void)
 	std::cout << std::endl;
 }
 
-// void UnaryTest(void)
-// {
-// 	std::cout << "\n********** Unary test ********** " << std::endl;
+void UnaryTest(void)
+{
+	std::cout << "\n********** Unary test ********** " << std::endl;
 
-// 	CS170::Vector2D v1(3.0f, 4.0f);
-// 	std::cout << "v1 = " << v1 << std::endl;
-// 	CS170::Vector2D v2 = -v1;
-// 	std::cout << "v2 = -v1" << std::endl;
+	CS170::Vector2D v1(3.0f, 4.0f);
+	std::cout << "v1 = " << v1 << std::endl;
+	CS170::Vector2D v2 = -v1;
+	std::cout << "v2 = -v1" << std::endl;
 
-// 	std::cout << "v1 = " << v1 << std::endl;
-// 	std::cout << "v2 = " << v2 << std::endl;
+	std::cout << "v1 = " << v1 << std::endl;
+	std::cout << "v2 = " << v2 << std::endl;
 
-// 	std::cout << std::endl;
+	std::cout << std::endl;
 
-// 	CS170::Vector2D v3(-3.0f, 4.0f);
-// 	std::cout << "v3 = " << v3 << std::endl;
-// 	CS170::Vector2D v4 = - - -v3;
-// 	std::cout << "v4 = - - -v3" << std::endl;
+	CS170::Vector2D v3(-3.0f, 4.0f);
+	std::cout << "v3 = " << v3 << std::endl;
+	CS170::Vector2D v4 = - - -v3;
+	std::cout << "v4 = - - -v3" << std::endl;
 
-// 	std::cout << "v3 = " << v3 << std::endl;
-// 	std::cout << "v4 = " << v4 << std::endl;
-// }
+	std::cout << "v3 = " << v3 << std::endl;
+	std::cout << "v4 = " << v4 << std::endl;
+}
 
 int main(void)
 {
@@ -266,7 +266,7 @@ int main(void)
 	ScaleTest();
 	AssignmentTest1();
 	AssignmentTest2();
-	// UnaryTest();
+	UnaryTest();
 
 	return 0;
 }
