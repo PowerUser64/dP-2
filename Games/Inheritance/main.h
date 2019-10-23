@@ -1,0 +1,5 @@
+#include "Shape.cpp"
+#include "Point.cpp"
+#include "Circle.cpp"
+#include "Rectangle.cpp"
+#include "Polygon.cpp"

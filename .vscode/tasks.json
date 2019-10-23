@@ -31,12 +31,12 @@
                 
                 // Files to compile -------------------------------------------
                 // Multi file projects "${fileDirname}/*",
-                  "${fileDirname}/main.cpp",
-                  "${fileDirname}/Point.cpp"
-                //   "${fileDirname}/Vector2D.cpp",
-                //   "${fileDirname}/driver-sample.cpp",
-                //   "${fileDirname}/driver_big.cpp",
-                //   "${fileDirname}/PRNG.cpp",
+                "${fileDirname}/Shape.cpp",
+                "${fileDirname}/Point.cpp",
+                "${fileDirname}/Circle.cpp",
+                "${fileDirname}/Rectangle.cpp",
+                "${fileDirname}/Polygon.cpp",
+                "${fileDirname}/main.cpp"
                 
                 // Single file projects 
                 //   "${relativeFile}",
