@@ -33,7 +33,3 @@ void Shape::SetCenter(float x_, float y_)
 {
     center.x = x_, center.y = y_;
 }
-
-void Shape::Draw()
-{
-}

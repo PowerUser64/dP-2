@@ -6,7 +6,7 @@ public:
     ~Shape();
     Point GetCenter();
     void SetCenter(float x_, float y_);
-    void Draw();
+    virtual void Shape::Draw() = 0;
 private:
     Point center;
 };

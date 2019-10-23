@@ -1,5 +1,7 @@
 #include "Circle.h"
-class Circle : Shape
+
+Circle::Circle(Point center_, unsigned int radius_) : Shape(center_)
 {
-    Circle(Point center_, unsigned int radius_);
-};
+    radius = radius_;
+}
+void Draw();
