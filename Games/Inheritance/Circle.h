@@ -1,5 +1,5 @@
 #include "Point.h"
-
+#include "Shape.h"
 /*
  * Circle(Point center_, unsigned int radius_);
  * Properties: unsigned int radius
