@@ -31,12 +31,13 @@
                 
                 // Files to compile -------------------------------------------
                 // Multi file projects "${fileDirname}/*",
-                "${fileDirname}/Shape.cpp",
-                "${fileDirname}/Point.cpp",
-                "${fileDirname}/Circle.cpp",
-                "${fileDirname}/Rectangle.cpp",
-                "${fileDirname}/Polygon.cpp",
-                "${fileDirname}/main.cpp"
+                  "${fileDirname}/Point.cpp",
+                  "${fileDirname}/Shape.cpp",
+                  "${fileDirname}/Circle.cpp",
+                  "${fileDirname}/Shape-With-Vertices.cpp",
+                  "${fileDirname}/Rectangle.cpp",
+                  "${fileDirname}/Polygon.cpp",
+                  "${fileDirname}/main.cpp"
                 
                 // Single file projects 
                 //   "${relativeFile}",
