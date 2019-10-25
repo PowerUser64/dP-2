@@ -1,10 +1,9 @@
 #include <iostream>
-// #include "main.h"\
-   ^ this was apparently a bad idea
+
 #include "Circle.h"
 #include "Rectangle.h"
-#include "Polygon.h"
-#include "Shape.h"
+// #include "Polygon.h"
+// #include "Shape.h"
 
 /*     /-------------\
  *     |    Shape    |
@@ -54,37 +53,37 @@ void TestingTheCircleClass(void)
     std::cout << std::endl;
 }
 
-// void TestingTheRectangleClass(void)
-// {
-//     std::cout << "Testing The Rectangle Class:" << std::endl;
-//     std::cout << "-------------------------" << std::endl;
-//     std::cout << "Rectangle 1:" << std::endl;
-//     std::cout << "---------" << std::endl;
-//     Rectangle s1(Point(0, 0), 10, 5);
-//     s1.Draw();
+void TestingTheRectangleClass(void)
+{
+    std::cout << "Testing The Rectangle Class:" << std::endl;
+    std::cout << "-------------------------" << std::endl;
+    std::cout << "Rectangle 1:" << std::endl;
+    std::cout << "---------" << std::endl;
+    Rectangle s1(Point(0, 0), 10, 5);
+    s1.Draw();
 
-//     std::cout << "Rectangle 2:" << std::endl;
-//     std::cout << "---------" << std::endl;
-//     Rectangle s2(s1);
-//     s2.Draw();
+    std::cout << "Rectangle 2:" << std::endl;
+    std::cout << "---------" << std::endl;
+    Rectangle s2(s1);
+    s2.Draw();
 
-//     std::cout << "Rectangle 3:" << std::endl;
-//     std::cout << "---------" << std::endl;
-//     Rectangle *s3 = new Rectangle(Point(10, 10), 10, 10);
-//     s3->Draw();
-//     s3->SetCenter(15, 15);
-//     s3->Draw();
-//     delete s3;
+    std::cout << "Rectangle 3:" << std::endl;
+    std::cout << "---------" << std::endl;
+    Rectangle *s3 = new Rectangle(Point(10, 10), 10, 10);
+    s3->Draw();
+    s3->SetCenter(15, 15);
+    s3->Draw();
+    delete s3;
 
-//     std::cout << "Rectangle 4:" << std::endl;
-//     std::cout << "---------" << std::endl;
-//     const Rectangle s4(Point(20, 20), 12, 4);
-//     s4.Draw();
-//     //Should get a compiler error
-//     //s4.SetCenter(30, 30);
+    std::cout << "Rectangle 4:" << std::endl;
+    std::cout << "---------" << std::endl;
+    const Rectangle s4(Point(20, 20), 12, 4);
+    s4.Draw();
+    //Should get a compiler error
+    //s4.SetCenter(30, 30);
 
-//     std::cout << std::endl;
-// }
+    std::cout << std::endl;
+}
 
 // void TestingThePolygonClass(void)
 // {
@@ -172,7 +171,7 @@ void TestingTheAbstractClasses(void)
 int main(void)
 {
     TestingTheCircleClass();
-    // TestingTheRectangleClass();
+    TestingTheRectangleClass();
     // TestingThePolygonClass();
     // TestingPolymorphism();
 }

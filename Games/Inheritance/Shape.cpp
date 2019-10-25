@@ -1,4 +1,6 @@
 #include "Shape.h"
+#include <iostream>
+
 /* 
  * Description:
  * Abstract class that serves as the parent of all shapes.
@@ -17,14 +19,14 @@
 
 Shape::Shape(Point center_)
 {
-    Point center = Point();
+    center = center_;
 }
 
 Shape::~Shape()
 {
 }
 
-Point Shape::GetCenter()
+Point Shape::GetCenter() const
 {
     return center;
 }

@@ -34,9 +34,9 @@
                   "${fileDirname}/Point.cpp",
                   "${fileDirname}/Shape.cpp",
                   "${fileDirname}/Circle.cpp",
-                  "${fileDirname}/Shape-With-Vertices.cpp",
+                  "${fileDirname}/Shape_With_Vertices.cpp",
                   "${fileDirname}/Rectangle.cpp",
-                  "${fileDirname}/Polygon.cpp",
+                //   "${fileDirname}/Polygon.cpp",
                   "${fileDirname}/main.cpp"
                 
                 // Single file projects 

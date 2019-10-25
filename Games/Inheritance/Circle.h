@@ -1,3 +1,4 @@
+#pragma once
 #include "Point.h"
 #include "Shape.h"
 /*
@@ -7,7 +8,9 @@
 class Circle : public Shape
 {
 public:
-    Circle::Circle(Point center_, unsigned int radius_);
+    Circle(Point center_, unsigned int radius_);
+    ~Circle();
+    void Draw() const;
 
 private:
     unsigned int radius;

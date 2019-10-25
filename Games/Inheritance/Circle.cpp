@@ -2,6 +2,12 @@
 
 Circle::Circle(Point center_, unsigned int radius_) : Shape(center_)
 {
-    radius = radius_;
+    radius = radius_, SetCenter(center_.x, center_.y);
 }
-void Draw();
+Circle::~Circle()
+{
+}
+void Circle::Draw() const
+{
+    std::cout << "Drawing a circle at x = " << GetCenter().x << " y = " << GetCenter().y << " and radius " << radius << std::endl              << std::endl;
+}

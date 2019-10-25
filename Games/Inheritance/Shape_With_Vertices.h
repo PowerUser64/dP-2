@@ -1,3 +1,4 @@
+#pragma once
 #include "Point.h"
 #include "Shape.h"
 class Shape_With_Vertices : public Shape

@@ -1,12 +1,16 @@
+#pragma once
 #include "Point.h"
+#include <iostream>
+
 class Shape
 {
 public:
     Shape(Point center_);
-    ~Shape();
-    Point GetCenter();
+    virtual ~Shape();
+    Point GetCenter() const;
     void SetCenter(float x_, float y_);
-    virtual void Shape::Draw() = 0;
+    virtual void Draw() const = 0;
+
 private:
     Point center;
 };
