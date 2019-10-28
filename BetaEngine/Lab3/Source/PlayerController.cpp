@@ -12,13 +12,18 @@ void PlayerController::Initialize()
 	transform = GetOwner()->GetComponent<Beta::Transform>();
 }
 
+void Serialize(Beta::FileStream &stream) const
+{
+	stream.WriteVariable
+}
+void Deserialize(Beta::FileStream &stream);
+
 void PlayerController::Update(float dt)
 {
 	using namespace Beta;
 	Input& input = *EngineGetModule(Input);
 
 	Vector2D position = transform->GetTranslation();
-	float speed = 2.0f;
 
 	if (input.CheckHeld(VK_LEFT))
 	{

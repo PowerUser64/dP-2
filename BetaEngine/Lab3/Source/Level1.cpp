@@ -35,55 +35,58 @@ Level1::Level1()
 // Initialize the memory associated with the Level1 game state.
 void Level1::Initialize()
 {
-	std::cout << "Level1: Initialize" << std::endl;
+	// std::cout << "Level1: Initialize" << std::endl;
 
-	// Create a new game object
-	testObject = new GameObject("TestObject");
+	// // Create a new game object
+	// testObject = new GameObject("TestObject");
 
-	// Create a transform component at 0,0 with scale 300,300
-	Transform* transform = new Transform(2.0f, 0.0f);
-	transform->SetRotation(0.5f);
-	transform->SetScale(Vector2D(2.0f, 6.0f));
-	testObject->AddComponent(transform);
+	// // Create a transform component at 0,0 with scale 300,300
+	// Transform* transform = new Transform(2.0f, 0.0f);
+	// transform->SetRotation(0.5f);
+	// transform->SetScale(Vector2D(2.0f, 6.0f));
+	// testObject->AddComponent(transform);
 
-	// Create a sprite component
-	Sprite* sprite = new Sprite();
-	sprite->SetColor(Color(1.0f,0.5f,0.1f));
-	testObject->AddComponent(sprite);
+	// // Create a sprite component
+	// Sprite* sprite = new Sprite();
+	// sprite->SetColor(Color(1.0f,0.5f,0.1f));
+	// testObject->AddComponent(sprite);
 
-	// Load a texture and sprite source
-	TexturePtr texture = ResourceGetTexture("Monkey.png");
-	// NOTE: SpriteSource requires the following:
-	// texture, name, numCols, numRows
-	SpriteSourcePtr spriteSource
-		= ResourceGetSpriteSource("Monkey");
-		// = std::make_shared<SpriteSource>(texture, "Monkey", 3, 5);
+	// // Load a texture and sprite source
+	// TexturePtr texture = ResourceGetTexture("Monkey.png");
+	// // NOTE: SpriteSource requires the following:
+	// // texture, name, numCols, numRows
+	// SpriteSourcePtr spriteSource
+	// 	= ResourceGetSpriteSource("Monkey");
+	// 	// = std::make_shared<SpriteSource>(texture, "Monkey", 3, 5);
 
-	// Set sprite's sprite source
-	sprite->SetSpriteSource(spriteSource);
+	// // Set sprite's sprite source
+	// sprite->SetSpriteSource(spriteSource);
 
-	// Create an animator component, add to object
-	Animator* animator = new Animator();
-	testObject->AddComponent(animator);
+	// // Create an animator component, add to object
+	// Animator* animator = new Animator();
+	// testObject->AddComponent(animator);
 
-	// Load animations
-	// NOTE: Animation requires the following:
-	// name, spriteSource, frameCount, frameStart, frameDuration
-	AnimationPtr walkAnimation 
-		= std::make_shared<Animation>("MonkeyWalk", spriteSource,
-			8, 0, 0.15f);
+	// // Load animations
+	// // NOTE: Animation requires the following:
+	// // name, spriteSource, frameCount, frameStart, frameDuration
+	// AnimationPtr walkAnimation 
+	// 	// = std::make_shared<Animation>("MonkeyWalk", spriteSource,
+	// 	// 	8, 0, 0.15f);
+	// 	= ResourceGetAnimation("MonkeyWalk");
+	// // Add animations to animator
+	// walkIndex = animator->AddAnimation(walkAnimation);
 
-	// Add animations to animator
-	walkIndex = animator->AddAnimation(walkAnimation);
-
-	// Add player controller component to Monkey
+	// // Add player controller component to Monkey
 	testObject->AddComponent(new PlayerController());
 
 	// Add the object to the object manager
 	GetSpace()->GetObjectManager().AddObject(*testObject);
 
 	// Play animation
+	Animator* animation
 	animator->Play(walkIndex);
+
+	// EngineGetModule(GameObjectFactory)->SaveObjectToFile(testObject);
 }
 
 // Update the Level1 game state.

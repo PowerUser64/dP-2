@@ -1,0 +1,7 @@
+MonkeyWalk
+{
+    frameStart : 0
+    frameCount : 8
+    frameDuration : 0.2
+    spriteSource : Monkey
+}

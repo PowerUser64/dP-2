@@ -5,7 +5,7 @@
 // Project:		BetaFramework
 // Course:		WANIC VGP2 2018-2019
 //
-// Copyright © 2018 DigiPen (USA) Corporation.
+// Copyright ï¿½ 2018 DigiPen (USA) Corporation.
 //
 //------------------------------------------------------------------------------
 
@@ -17,6 +17,7 @@
 
 // Initial level
 #include "Level1.h"
+#include "PlayerController.h"
 
 //------------------------------------------------------------------------------
 
@@ -50,8 +51,12 @@ int WINAPI WinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prevInstance,
 
 	// Set engine startup settings
 	StartupSettings settings;
-	settings.windowWidth = 800;
+ 	settings.windowWidth = 800;
 	settings.windowHeight = 600;
+
+	// Reg. custom components
+	GameObjectFactory& factory = *EngineGetModule(GameObjectFactory);
+	factory.RegisterComponent<PlayerController>();
 
 	// Game engine goes!
 	engine.Start(settings);
