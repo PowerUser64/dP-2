@@ -5,7 +5,7 @@
 // Project:		BetaFramework
 // Course:		WANIC VGP2 2018-2019
 //
-// Copyright © 2018 DigiPen (USA) Corporation.
+// Copyright ï¿½ 2018 DigiPen (USA) Corporation.
 //
 //------------------------------------------------------------------------------
 
@@ -45,15 +45,15 @@ public:
 	//------------------------------------------------------------------------------
 
 	// Constructor
-	MonkeyAnimation();
+	// MonkeyAnimation();
 
-	// Initialize this component (happens at object creation).
-	void Initialize() override;
+	// // Initialize this component (happens at object creation).
+	// void Initialize() override;
 
-	// Fixed update function for this component.
-	// Params:
-	//   dt = The (fixed) change in time since the last step.
-	void Update(float dt) override;
+	// // Fixed update function for this component.
+	// // Params:
+	// //   dt = The (fixed) change in time since the last step.
+	// void Update(float dt) override;
 
 private:
 	//------------------------------------------------------------------------------
