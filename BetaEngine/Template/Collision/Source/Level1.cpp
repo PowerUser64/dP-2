@@ -5,7 +5,7 @@
 // Project:		BetaFramework
 // Course:		WANIC VGP2 2018-2019
 //
-// Copyright © 2018 DigiPen (USA) Corporation.
+// Copyright ï¿½ 2018 DigiPen (USA) Corporation.
 //
 //------------------------------------------------------------------------------
 
@@ -46,11 +46,18 @@ void Level1::Initialize()
 
 	// Create a sprite component and set its mesh and sprite source
 	Sprite* sprite = new Sprite();
-	sprite->SetColor(Colors::Green);
+	sprite->SetColor(Colors::White);
 	testObject->AddComponent(sprite);
 
+	// add circle collider
+	ColliderCircle* collider = new ColliderCircle();
+	testObject->AddComponent(collider);
+
 	// Initialize the object
-	testObject->Initialize();
+	// testObject->Initialize();
+
+	// use obj manager to update/draw, etc
+	GetSpace()-> GetObjectManager().AddObject(*testObject);
 }
 
 // Update the Level1 game state.
