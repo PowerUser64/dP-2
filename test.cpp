@@ -1,59 +1,89 @@
 #include <iostream>
-class ABC
+#define pr std::cout <<
+#define prnewln << std::endl;
+#define prpoint << point.x << ' ' << point.y
+class Point
 {
 public:
-    ABC(int x = 0)
+    Point(int x_ = 0, int y_ = 0)
     {
-        a_ = x;
+        x = x_;
+        y = y_;
     }
-    void f1(void)
-    {
-        std::cout << "ABC1";
-    }
-
-    void f2(void)
-    {
-        std::cout << "ABC2";
-    }
-
-    void f3(int)
-    {
-        std::cout << "ABC3";
-    }
-
-private:
-    int a_;
+    int x;
+    int y;
 };
 
-class X : public ABC
+class GameObject
 {
 public:
-    X(int x)
+    GameObject()
     {
-        a_ = x;
     }
 
-    void f1(int)
+    ~GameObject()
     {
-        std::cout << "X1";
     }
+    virtual void Display() = 0;
 
-    void f3(void)
-    {
-        std::cout << "X3";
-    }
-
-private:
-    int a_;
+protected:
+    Point point;
+    int type;
 };
 
-X x(5);
-ABC abc(6);
-x.f1();   // a  NV
-abc.f1(); // b  ABC1
-x.f2();   // c  ABC2
-abc.f2(); // d  ABC2
-abc.f3(); // e  NV
-x.f3();   // f  X3
-x.f1(5);  // g  X1
-x.f3(5);  // h  NV
+class Hero : public GameObject
+{
+public:
+    Hero(Point T)
+    {
+        point = T;
+    }
+
+    void Display(){
+        pr "Hero at: " prpoint prnewln}
+
+protected:
+    Point T;
+};
+
+class Enemy : public GameObject
+{
+public:
+    Enemy(Point T, int _type)
+    {
+        point = T;
+        type = _type;
+    }
+
+    void Display(){
+        pr "Enemy of type: " << type << "at: " prpoint prnewln
+    }
+
+protected:
+    Point T;
+};
+
+/* Expected Output:
+ * 
+ * Hero at: 0 0
+ * Enemy of type: 1 at: 10 10
+ * Enemy of type: 2 at: 10 20
+ * Enemy of type: 1 at: 5 25
+ */
+
+int main(void)
+{
+    GameObject *objects[4];
+    objects[0] = new Hero(Point(0, 0));
+    objects[1] = new Enemy(Point(10, 10), 1);
+    objects[2] = new Enemy(Point(10, 20), 2);
+    objects[3] = new Enemy(Point(5, 25), 1);
+
+    for (int i = 0; i < 4; ++i)
+    {
+        objects[i]->Display();
+        delete objects[i];
+    }
+
+    return 0;
+}

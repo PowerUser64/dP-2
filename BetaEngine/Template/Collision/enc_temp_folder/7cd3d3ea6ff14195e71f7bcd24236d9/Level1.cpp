@@ -52,8 +52,8 @@ void Level1::Initialize()
 
 	// add circle collider
 	// ColliderCircle* collider = new ColliderCircle();
-	ColliderCircle* collider = new ColliderRectangle();
-	collider->SetRadius(transform->GetScale().x / 2.0f);
+	ColliderRectangle* collider = new ColliderRectangle();
+	collider->SetExtents(transform->GetScale() / 2.0f);
 	testObject->AddComponent(collider);
 
 	// Initialize the object
@@ -82,7 +82,7 @@ void Level1::Initialize()
 	// add circle collider
 	// ColliderCircle* collider = new ColliderCircle();
 	collider = new ColliderRectangle();
-	collider->SetRadius(transform->GetScale().x / 2.0f);
+	collider->SetExtents(transform->GetScale() / 2.0f);
 	testObject->AddComponent(collider);
 
 	// Initialize the object

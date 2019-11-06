@@ -10,9 +10,9 @@
             "type": "cppdbg",
             "request": "launch",
             // Multi file
-                "program": "${fileDirname}/Inheritance.exe",
+                // "program": "${fileDirname}/Inheritance.exe",
             // Single file
-                // "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
             
             "args": [],
             "stopAtEntry": false,

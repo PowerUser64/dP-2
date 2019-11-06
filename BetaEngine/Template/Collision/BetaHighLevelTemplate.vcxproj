@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\DestroyOnCollide.cpp" />
     <ClCompile Include="Source\Level1.cpp" />
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\stdafx.cpp">
@@ -19,6 +20,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\DestroyOnCollide.h" />
     <ClInclude Include="Source\Level1.h" />
     <ClInclude Include="Source\stdafx.h" />
   </ItemGroup>

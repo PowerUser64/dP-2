@@ -22,6 +22,9 @@
     <ClCompile Include="Source\Level1.cpp">
       <Filter>Game\Levels</Filter>
     </ClCompile>
+    <ClCompile Include="Source\DestroyOnCollide.cpp">
+      <Filter>Game\Components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\stdafx.h">
@@ -29,6 +32,9 @@
     </ClInclude>
     <ClInclude Include="Source\Level1.h">
       <Filter>Game\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DestroyOnCollide.h">
+      <Filter>Game\Components</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
