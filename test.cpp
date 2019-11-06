@@ -1,46 +1,44 @@
-/*
- * Guess what? You get to review assignment operators and copy constructors yet again! 
- * (I will keep asking you to do this until I am confident nearly everyone can do it -- you'll also need to do this on exams, so extra practice never hurts.)
- * The following class represents a dynamically allocated array of floats. 
- * 
- * Implement the assignment operator and copy constructor so that they perform a proper deep copy and there are no memory leaks or other undefined behavior.
- */
-#include "test.h"
-
-class DynamicArray
+#include <iostream>
+class BaseClass
 {
 public:
-    // Default Constructor
-    DynamicArray()
-        : data(nullptr), size(0)
-    {
-    }
-
-    DynamicArray(const DynamicArray &other)
-        : data(nullptr), size(0)
-    {
-        float *data = new float[size];
-    }
-
-    // Destructor
-    ~DynamicArray()
-    {
-        delete[] data;
-    }
-
-    // Other functions go here!
-    // assignment operator
-    DynamicArray& operator=(const DynamicArray array)
-    {
-        if (size = array.size)
-            for (int i = 0; i < array.size; i++)
-            {
-            }
-    }
-
+  int iPublicField;
+  void Display(void)
+  {
+    std::cout << iPublicField << std::endl; // a        V
+    std::cout << iPrivateField << std::endl; // b       V
+    std::cout << iProtectedField << std::endl; // c     V
+  }
 private:
-    float *data;
-    unsigned size;
+  int iPrivateField;
+protected:
+  int iProtectedField;
 };
 
-// Note that I have not given you the prototypes for these functions. You will have to figure out what the prototypes should be on your own.
+class SubClass : public BaseClass
+{
+public:
+  void Display(void)
+  {
+    std::cout << iPublicField << std::endl; // d        V
+    std::cout << iPrivateField << std::endl; // e       NV
+    std::cout << iProtectedField << std::endl; // f     V
+  }
+};
+
+int main(void)
+{
+   BaseClass var1;
+   std::cout << var1.iPublicField << std::endl; // g    V 
+   std::cout << var1.iPrivateField << std::endl; // h   NV
+   std::cout << var1.iProtectedField << std::endl; // i NV
+   var1.Display(); // j                                 V
+   
+   SubClass var2;
+   std::cout << var2.iPublicField << std::endl; // k    V
+   std::cout << var2.iPrivateField << std::endl; // l   NV
+   std::cout << var2.iProtectedField << std::endl; // m NV
+   var2.Display(); // n                                 V
+   
+   return 0;
+}
