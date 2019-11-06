@@ -1,44 +1,59 @@
 #include <iostream>
-class BaseClass
+class ABC
 {
 public:
-  int iPublicField;
-  void Display(void)
-  {
-    std::cout << iPublicField << std::endl; // a        V
-    std::cout << iPrivateField << std::endl; // b       V
-    std::cout << iProtectedField << std::endl; // c     V
-  }
+    ABC(int x = 0)
+    {
+        a_ = x;
+    }
+    void f1(void)
+    {
+        std::cout << "ABC1";
+    }
+
+    void f2(void)
+    {
+        std::cout << "ABC2";
+    }
+
+    void f3(int)
+    {
+        std::cout << "ABC3";
+    }
+
 private:
-  int iPrivateField;
-protected:
-  int iProtectedField;
+    int a_;
 };
 
-class SubClass : public BaseClass
+class X : public ABC
 {
 public:
-  void Display(void)
-  {
-    std::cout << iPublicField << std::endl; // d        V
-    std::cout << iPrivateField << std::endl; // e       NV
-    std::cout << iProtectedField << std::endl; // f     V
-  }
+    X(int x)
+    {
+        a_ = x;
+    }
+
+    void f1(int)
+    {
+        std::cout << "X1";
+    }
+
+    void f3(void)
+    {
+        std::cout << "X3";
+    }
+
+private:
+    int a_;
 };
 
-int main(void)
-{
-   BaseClass var1;
-   std::cout << var1.iPublicField << std::endl; // g    V 
-   std::cout << var1.iPrivateField << std::endl; // h   NV
-   std::cout << var1.iProtectedField << std::endl; // i NV
-   var1.Display(); // j                                 V
-   
-   SubClass var2;
-   std::cout << var2.iPublicField << std::endl; // k    V
-   std::cout << var2.iPrivateField << std::endl; // l   NV
-   std::cout << var2.iProtectedField << std::endl; // m NV
-   var2.Display(); // n                                 V
-   
-   return 0;
-}
+X x(5);
+ABC abc(6);
+x.f1();   // a  NV
+abc.f1(); // b  ABC1
+x.f2();   // c  ABC2
+abc.f2(); // d  ABC2
+abc.f3(); // e  NV
+x.f3();   // f  X3
+x.f1(5);  // g  X1
+x.f3(5);  // h  NV
