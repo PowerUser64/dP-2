@@ -52,8 +52,8 @@ void Level1::Initialize()
 
 	// add circle collider
 	// ColliderCircle* collider = new ColliderCircle();
-	ColliderCircle* collider = new ColliderRectangle();
-	collider->SetRadius(transform->GetScale().x / 2.0f);
+	ColliderRectangle* collider = new ColliderRectangle();
+	collider->SetExtents(transform->GetScale() / 2.0f);
 	testObject->AddComponent(collider);
 
 	// Initialize the object
@@ -69,26 +69,24 @@ void Level1::Initialize()
 	testObject = new GameObject("TestObject");
 
 	// Create a transform component at 0,0 with scale 300,300
-	transform = new Transform(1.5f, 2.0f);
+	transform = new Transform(1.5f, 1.5f);
 	transform->SetRotation(0.0f);
 	transform->SetScale(Vector2D(2.0f, 2.0f));
 	testObject->AddComponent(transform);
 
 	// Create a sprite component and set its mesh and sprite source
 	sprite = new Sprite();
-	sprite->SetColor(Colors::White);
+	sprite->SetColor(Colors::LightBlue);
 	testObject->AddComponent(sprite);
 
 	// add circle collider
 	// ColliderCircle* collider = new ColliderCircle();
 	collider = new ColliderRectangle();
-	collider->SetRadius(transform->GetScale().x / 2.0f);
+	collider->SetExtents(transform->GetScale() / 2.0f);
 	testObject->AddComponent(collider);
 
 	// Initialize the object
 	// testObject->Initialize();
-	destroy = new DestroyOnCollide();
-	testObject->AddComponent(destroy);
 
 	// use obj manager to update/draw, etc
 	GetSpace()->GetObjectManager().AddObject(*testObject);
@@ -106,21 +104,6 @@ void Level1::Update(float dt)
 	// If the user presses the '1' key, restart the current level
 	if (input->CheckTriggered('1'))
 		GetSpace()->RestartLevel();
-
-	// If the user presses the 'D' key, delete the object
-	if (input->CheckTriggered('D'))
-	{
-		delete testObject;
-		testObject = nullptr;
-	}
-
-	// If the object exists
-	if (testObject)
-	{
-		// Update and draw
-		testObject->Update(dt);
-		testObject->Draw();
-	}
 }
 
 // Shutdown any memory associated with the Level1 game state.
