@@ -9,8 +9,8 @@
 //
 //------------------------------------------------------------------------------
 
-#include "stdafx.h"				// Precompiled header
-#include "MonkeyMovement.h"	// Class file
+#include "stdafx.h"         // Precompiled header
+#include "MonkeyMovement.h" // Class file
 
 using namespace Beta;
 
@@ -22,13 +22,17 @@ using namespace Beta;
  */
 
 // Constructor
-MonkeyMovement()
+MonkeyMovement::MonkeyMovement()
+    : Component("Component"),
+      monkeyWalkSpeed(3.0f),
+      monkeyJumpSpeed(8.0f),
+      groundHeight(-1.5f),
+      gravity(0.0f, -12.0f)
 {
-
 }
 
 // Initialize this component (happens at object creation).
-void Initialize() override
+void MonkeyMovement::Initialize()
 {
 
 }
@@ -36,21 +40,18 @@ void Initialize() override
 // Fixed update function for this component.
 // Params:
 //   dt = The (fixed) change in time since the last step.
-void Update(float dt) override
+void Update(float dt)
 {
-
 }
 
 // Moves horizontally based on input
-void MoveHorizontal() const
+void MonkeyMovement::MoveHorizontal() const
 {
-
 }
 
 // Moves vertically based on input
-void MoveVertical() const
+void MonkeyMovement::MoveVertical() const
 {
-
 }
 
 // Create extra component functions - DO NOT REMOVE
