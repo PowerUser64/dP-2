@@ -31,27 +31,51 @@ MonkeyMovement::MonkeyMovement()
 {
 }
 
-// Initialize this component (happens at object creation).
+/* Set pointers to Transform and RigidBody using GetOwner()->GetComponent<ComponentType>() where ComponentType is the component you want to access, such as Transform
+ * Set translation.y on transform to ground height
+ * 
+ * Initialize this component (happens at object creation).
+ */
 void MonkeyMovement::Initialize()
 {
-
+  transform = GetOwner()->GetComponent<Transform>();
+  rigidBody = GetOwner()->GetComponent<RigidBody>();
+  transform->SetTranslationY(groundHeight);
 }
 
 // Fixed update function for this component.
 // Params:
 //   dt = The (fixed) change in time since the last step.
-void Update(float dt)
+void MonkeyMovement::Update(float dt)
 {
+  UNREFERENCED_PARAMETER(dt);
+  Input *input = EngineGetModule(Input);
+  MoveVertical();
+  MoveHorizontal();
 }
 
 // Moves horizontally based on input
 void MonkeyMovement::MoveHorizontal() const
 {
+  Input *input = EngineGetModule(Input);
+  if ((transform->GetTranslation().y <= groundHeight) && (rigidBody->GetVelocity().y <= 0))
+  {
+    if (input->CheckHeld(VK_RIGHT))
+      rigidBody->SetVelocityX(monkeyWalkSpeed);
+    if (input->CheckHeld(VK_LEFT))
+      rigidBody->SetVelocityX(-1 * monkeyWalkSpeed);
+  }
 }
 
 // Moves vertically based on input
 void MonkeyMovement::MoveVertical() const
 {
+  Input *input = EngineGetModule(Input);
+  if ((transform->GetTranslation().y <= groundHeight) && (rigidBody->GetVelocity().y <= 0))
+  {
+    if (input->CheckHeld(' '))
+      rigidBody->SetVelocityX(monkeyJumpSpeed);
+  }
 }
 
 // Create extra component functions - DO NOT REMOVE
