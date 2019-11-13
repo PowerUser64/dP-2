@@ -1,10 +1,10 @@
 #include "stdafx.h"
 #include "Level1.h"
+#include "MonkeyMovement.h"
 
 using namespace Beta;
 Level1::Level1() : Level("Leve1")
 {
-
 }
 
 void Level1::Load()
@@ -14,11 +14,11 @@ void Level1::Load()
 	spriteSourceMonkey = std::make_shared<SpriteSource>(textureMonkey, "Monkey", 3, 5);
 	// animations
 	//"MonkeyWalk" (8 frames, starts from frame 0, frame duration of 0.15f seconds)
-	animationWalk = std::make_shared<Animation>(   "MonkeyWalk", spriteSourceMonkey, 8, 0, 0.01f);
+	animationWalk = std::make_shared<Animation>("MonkeyWalk", spriteSourceMonkey, 8, 0, 0.01f);
 	//"MonkeyJump" (1 frame, starts from frame 9)
-	animationJump = std::make_shared<Animation>(   "MonkeyJump", spriteSourceMonkey, 1, 9, 0.0f);
+	animationJump = std::make_shared<Animation>("MonkeyJump", spriteSourceMonkey, 1, 9, 0.0f);
 	//"MonkeyIdle" (1 frame, starts from frame 12)
-	animationIdle = std::make_shared<Animation>(   "MonkeyIdle", spriteSourceMonkey, 1, 12, 0.0f);
+	animationIdle = std::make_shared<Animation>("MonkeyIdle", spriteSourceMonkey, 1, 12, 0.0f);
 }
 
 void Level1::Initialize()
@@ -28,7 +28,6 @@ void Level1::Initialize()
 	GraphicsEngine *graphix = EngineGetModule(GraphicsEngine);
 	graphix->SetBackgroundColor(Colors::Blue);
 	GetSpace()->GetObjectManager().AddObject(*CreateMonkey());
-	
 }
 
 void Level1::Update(float dt)
@@ -47,13 +46,14 @@ void Level1::Shutdown()
 	std::cout << "Level1::Shutdown\n";
 }
 
-void Level1::Unload(){
+void Level1::Unload()
+{
 	std::cout << "Level1::Unload\n";
 }
 
 Beta::GameObject *Level1::CreateMonkey(void)
 {
-	GameObject* Monkey = new GameObject("Monkey");
+	GameObject *Monkey = new GameObject("Monkey");
 
 	Transform *transform = new Transform(0.0f, 0.0f);
 	transform->SetScale(Vector2D(2.0f, 2.0f));
@@ -72,6 +72,9 @@ Beta::GameObject *Level1::CreateMonkey(void)
 
 	RigidBody *rigidBody = new RigidBody();
 	Monkey->AddComponent(rigidBody);
+
+	MonkeyMovement *movement = new MonkeyMovement();
+	Monkey->AddComponent(movement);
 
 	return Monkey;
 }

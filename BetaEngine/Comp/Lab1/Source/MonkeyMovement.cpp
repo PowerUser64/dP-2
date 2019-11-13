@@ -49,7 +49,7 @@ void MonkeyMovement::Initialize()
 void MonkeyMovement::Update(float dt)
 {
   UNREFERENCED_PARAMETER(dt);
-  Input *input = EngineGetModule(Input);
+  // Input *input = EngineGetModule(Input);
   MoveVertical();
   MoveHorizontal();
 }
@@ -58,24 +58,37 @@ void MonkeyMovement::Update(float dt)
 void MonkeyMovement::MoveHorizontal() const
 {
   Input *input = EngineGetModule(Input);
-  if ((transform->GetTranslation().y <= groundHeight) && (rigidBody->GetVelocity().y <= 0))
-  {
-    if (input->CheckHeld(VK_RIGHT))
-      rigidBody->SetVelocityX(monkeyWalkSpeed);
-    if (input->CheckHeld(VK_LEFT))
-      rigidBody->SetVelocityX(-1 * monkeyWalkSpeed);
-  }
+  int direction = 0;
+  if (input->CheckHeld(VK_RIGHT))
+    ++direction;
+  if (input->CheckHeld(VK_LEFT))
+    --direction;
+
+  rigidBody->SetVelocityX(direction * monkeyWalkSpeed);
 }
 
 // Moves vertically based on input
 void MonkeyMovement::MoveVertical() const
 {
+/*
+  If translation.y is <= groundHeight and velocity.y is <= 0
+    If the up key is pressed (Input::CheckTriggered)
+      Set velocity.y to monkeyJumpSpeed
+    Else
+      Set velocity.y to 0
+      Set translation.y to groundHeight
+  Else add a force using the AddForce function on the rigid body (use gravity)
+ */
   Input *input = EngineGetModule(Input);
   if ((transform->GetTranslation().y <= groundHeight) && (rigidBody->GetVelocity().y <= 0))
   {
     if (input->CheckHeld(' '))
-      rigidBody->SetVelocityX(monkeyJumpSpeed);
+      rigidBody->SetVelocityY(monkeyJumpSpeed);
+    else
+      rigidBody->SetVelocityY(0), transform->SetTranslationY(groundHeight);
   }
+  else
+    rigidBody->AddForce(gravity);
 }
 
 // Create extra component functions - DO NOT REMOVE
