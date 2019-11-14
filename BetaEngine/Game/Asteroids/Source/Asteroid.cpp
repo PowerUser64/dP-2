@@ -32,3 +32,32 @@ using namespace Beta;
 
 // Extra component stuff - DO NOT REMOVE
 COMPONENT_SUBCLASS_DEFINITION(Asteroid)
+
+Asteroid::Asteroid(float speedMin, float speedMax, unsigned basePointsValue, float sizePointsModifier, float spawnScaleModifier)
+{
+}
+
+void Asteroid::Initialize()
+{
+}
+
+unsigned Asteroid::GetPointValue() const
+{
+	return 0;
+}
+
+void Asteroid::OnCollisionStarted(const Beta::Event& event)
+{
+}
+
+void Asteroid::SetPosition()
+{
+}
+
+void Asteroid::SetVelocity()
+{
+}
+
+void Asteroid::SpawnNewAsteroids()
+{
+}

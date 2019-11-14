@@ -32,3 +32,19 @@ using namespace Beta;
 
 // Extra component stuff - DO NOT REMOVE
 COMPONENT_SUBCLASS_DEFINITION(PlayerProjectile)
+
+PlayerProjectile::PlayerProjectile()
+{
+}
+
+void PlayerProjectile::Initialize()
+{
+}
+
+void PlayerProjectile::SetSpawner(PlayerShip* player)
+{
+}
+
+void PlayerProjectile::OnCollisionStarted(const Beta::Event& event)
+{
+}

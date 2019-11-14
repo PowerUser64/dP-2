@@ -111,15 +111,12 @@ void Level1::Update(float dt)
 		position -= directionUp * speed * dt;
 
 	if (input->CheckHeld(VK_RIGHT))
-		position += direction * speed * dt;
-	if (input->CheckHeld(VK_LEFT))
-		position -= direction * speed * dt;
-	transform->SetTranslation(position);
-
-	if (input->CheckHeld('M'))
-		rot += 2.0f * dt;
-	if (input->CheckHeld('N'))
+		// position += direction * speed * dt;
 		rot -= 2.0f * dt;
+	if (input->CheckHeld(VK_LEFT))
+		// position -= direction * speed * dt;
+		rot += 2.0f * dt;
+	transform->SetTranslation(position);
 	transform->SetRotation(rot);
 }
 

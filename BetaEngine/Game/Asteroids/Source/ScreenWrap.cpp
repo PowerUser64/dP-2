@@ -32,3 +32,15 @@ using namespace Beta;
 
 // Extra component stuff - DO NOT REMOVE
 COMPONENT_SUBCLASS_DEFINITION(ScreenWrap)
+
+ScreenWrap::ScreenWrap()
+{
+}
+
+void ScreenWrap::Initialize()
+{
+}
+
+void ScreenWrap::Update(float dt)
+{
+}
