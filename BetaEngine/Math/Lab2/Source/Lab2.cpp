@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Lab2.h"
+#include "Animator.h"
 #define p pointP
 #define v vectorV
 #define w vectorU
@@ -15,6 +16,10 @@
  *      P
  */
 using namespace Beta;
+
+const Vector2D &Lab2::pointP = Animator::GetPointP();
+const Vector2D &Lab2::vectorU = Animator::GetVectorU();
+const Vector2D &Lab2::vectorV = Animator::GetVectorV();
 
 Lab2::Lab2()
 	: BetaObject("Lab2")
@@ -63,6 +68,12 @@ void Lab2::CreateParallelogram()
 
 void Lab2::CreateTriforce()
 {
+	DrawLine(p, w + p);
+	DrawLine(p, v + p);
+	DrawLine(w + p, v + p);
+	DrawLine((w + p)/2, (v + p)/2);
+	DrawLine(p, v + p);
+	DrawLine(w + p, v + p);
 }
 
 void Lab2::CreateFace()
