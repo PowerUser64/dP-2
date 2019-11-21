@@ -5,8 +5,8 @@ Rectangle::Rectangle(Point center_, unsigned int width_, unsigned int height_) :
     width = width_, height = height_;
     vertices[0] = Point(center_.x - (width / 2.0f), center_.y + (height / 2.0f));
     vertices[1] = Point(center_.x + (width / 2.0f), center_.y + (height / 2.0f));
-    vertices[2] = Point(center_.x - (width / 2.0f), center_.y - (height / 2.0f));
     vertices[3] = Point(center_.x + (width / 2.0f), center_.y - (height / 2.0f));
+    vertices[2] = Point(center_.x - (width / 2.0f), center_.y - (height / 2.0f));
 }
 void Rectangle::Draw() const
 {
