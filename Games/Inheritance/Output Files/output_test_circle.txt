@@ -1,3 +1,4 @@
+
 Testing The Circle Class:
 -------------------------
 Circle 1:
@@ -19,3 +20,91 @@ Circle 4:
 Drawing a circle at x = 20 y = 20 and radius 3
 
 
+Testing The Rectangle Class:
+-------------------------
+Rectangle 1:
+---------
+Drawing rectangle
+Vertex 0 (-5, 2.5)
+Vertex 1 (5, 2.5)
+Vertex 2 (-5, -2.5)
+Vertex 3 (5, -2.5)
+Rectangle 2:
+---------
+Drawing rectangle
+Vertex 0 (-5, 2.5)
+Vertex 1 (5, 2.5)
+Vertex 2 (-5, -2.5)
+Vertex 3 (5, -2.5)
+Rectangle 3:
+---------
+Drawing rectangle
+Vertex 0 (5, 15)
+Vertex 1 (15, 15)
+Vertex 2 (5, 5)
+Vertex 3 (15, 5)
+Drawing rectangle
+Vertex 0 (5, 15)
+Vertex 1 (15, 15)
+Vertex 2 (5, 5)
+Vertex 3 (15, 5)
+Rectangle 4:
+---------
+Drawing rectangle
+Vertex 0 (14, 22)
+Vertex 1 (26, 22)
+Vertex 2 (14, 18)
+Vertex 3 (26, 18)
+
+Testing The Polygon Class:
+---------------------------
+Polygon 1:
+-----------
+Drawing a polygon at x = 0 y = 0
+Vertex 0 (0, 0)
+Vertex 1 (0, 0)
+Vertex 2 (0, 0)
+Drawing a polygon at x = 0 y = 0
+Vertex 0 (0, 0)
+Vertex 1 (0, 0)
+Vertex 2 (0, 0)
+Polygon 2:
+-----------
+Drawing a polygon at x = 20 y = 20
+Vertex 0 (20, 20)
+Vertex 1 (20, 20)
+Vertex 2 (20, 20)
+Polygon 3:
+-----------
+Drawing a polygon at x = 10 y = 10
+Vertex 0 (10, 10)
+Vertex 1 (10, 10)
+Vertex 2 (10, 10)
+Vertex 3 (10, 10)
+Drawing a polygon at x = 15 y = 15
+Vertex 0 (15, 15)
+Vertex 1 (15, 15)
+Vertex 2 (15, 15)
+Vertex 3 (15, 15)
+
+Polygon 4:
+-----------
+Drawing a polygon at x = 20 y = 20
+Vertex 0 (20, 20)
+Vertex 1 (20, 20)
+Vertex 2 (20, 20)
+Vertex 3 (20, 20)
+
+Testing Polymorphism:
+----------------------
+Drawing a circle at x = 10 y = 10 and radius 5
+
+Drawing rectangle
+Vertex 0 (25, 32.5)
+Vertex 1 (35, 32.5)
+Vertex 2 (25, 27.5)
+Vertex 3 (35, 27.5)
+Drawing a polygon at x = 50 y = 50
+Vertex 0 (50, 50)
+Vertex 1 (50, 50)
+Vertex 2 (50, 50)

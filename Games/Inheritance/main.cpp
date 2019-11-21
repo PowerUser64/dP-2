@@ -3,8 +3,8 @@
 
 #include "Circle.h"
 #include "Rectangle.h"
-// #include "Polygon.h"
-// #include "Shape.h"
+#include "Polygon.h"
+#include "Shape.h"
 
 /*     /-------------\
  *     |    Shape    |
@@ -161,9 +161,9 @@ void TestingPolymorphism(void)
 void TestingTheAbstractClasses(void)
 {
     //Should get a compiler error
-    Shape s;
+    // Shape s;
     //Should get a compiler error
-    Shape_With_Vertices sv;
+    // Shape_With_Vertices sv;
 
 }
 
