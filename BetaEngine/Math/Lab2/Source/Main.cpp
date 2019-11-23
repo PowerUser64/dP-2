@@ -44,7 +44,7 @@ int WINAPI WinMain(HINSTANCE instance, HINSTANCE prevInstance, LPSTR command_lin
 	Beta::EngineCore& engine = Beta::EngineCore::GetInstance();
 	engine.AddModule<Animator>();
 	// TO DO: Add Lab2 to engine
-	//engine.AddModule<Lab2>();
+	engine.AddModule<Lab2>();
 
 	// Game engine goes!
 	Beta::StartupSettings settings;

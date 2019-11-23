@@ -5,7 +5,7 @@
 // Project:		Lab2
 // Course:		MAT140
 //
-// Copyright © 2018 DigiPen (USA) Corporation.
+// Copyright ï¿½ 2018 DigiPen (USA) Corporation.
 //
 //------------------------------------------------------------------------------
 
@@ -85,7 +85,7 @@ private:
 	static void DrawAngle(const Beta::Vector2D& Point1, const Beta::Vector2D& Point2, const Beta::Vector2D& Point3);
 
 	// Draws a line
-	static void DrawLine(const Beta::Vector2D& start, const Beta::Vector2D& end);
+	static void DrawLine(const Beta::Vector2D &start, const Beta::Vector2D &end, const Beta::Color color);
 
 	// Shapes - Complete these functions!
 	static void CreateTriangle();
