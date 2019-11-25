@@ -74,6 +74,7 @@ Lab2::Lab2()
 void Lab2::Initialize()
 {
 	std::cout << "Lab2:Initialize" << std::endl;
+	shape = 0;
 }
 
 void Lab2::Update(float dt)
@@ -82,13 +83,35 @@ void Lab2::Update(float dt)
 	GraphicsEngine &graphics = *EngineGetModule(GraphicsEngine);
 	Input &input = *EngineGetModule(Input);
 
+	if (input.CheckTriggered(VK_RIGHT))
+		++shape;
+	if (input.CheckTriggered(VK_LEFT))
+		--shape;
+
+	if (shape > 4)
+		shape = 0;
+	if (shape < 0)
+		shape = 4;
+
 	// call things to draw
-	switch (expression)
+	switch (shape)
 	{
-	case /* constant-expression */:
-		/* code */
+	case 0:
+		CreateTriangle();
 		break;
-	
+	case 1:
+		CreateParallelogram();
+		break;
+	case 2:
+		CreateTriforce();
+		break;
+	case 3:
+		CreateHexagon();
+		break;
+	case 4:
+		CreateDiamondCut();
+		break;
+
 	default:
 		break;
 	}
@@ -113,7 +136,7 @@ void Lab2::CreateParallelogram()
 {
 	DrawLine(p, u + p);
 	DrawLine(p, v + p);
-	DrawLine(p + u, p + v);
+	// DrawLine(p + u, p + v);
 	DrawLine(p + v, p + v + u);
 	DrawLine(p + u, p + v + u);
 }

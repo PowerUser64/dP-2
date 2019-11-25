@@ -39,7 +39,7 @@ MonkeyMovement::MonkeyMovement()
 void MonkeyMovement::Initialize()
 {
   transform = GetOwner()->GetComponent<Transform>();
-  rigidBody = GetOwner()->GetComponent<RigidBody>();
+  rigidBody = GetOwner()->GetComponent<RigidBody>();		
   transform->SetTranslationY(groundHeight);
 }
 
