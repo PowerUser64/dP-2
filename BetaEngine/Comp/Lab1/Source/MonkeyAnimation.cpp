@@ -16,12 +16,13 @@
 
 using namespace Beta;
 
-// STUDENT CODE GOES HERE
-
-//------------------------------------------------------------------------------
-// Public Functions:
-//------------------------------------------------------------------------------
-
+/*  MonkeyAnimation (constructor)
+ *      Initialize base class (Component) with name of class as string
+ *      Initialize other variables with the suggested values:
+ *          walkAnimation, jumpAnimation, idleAnimation should all be initialized to 0
+ *          currentState(StateIdle)
+ *          nextState(StateIdle)
+ */
 // Constructor
 MonkeyAnimation::MonkeyAnimation()
     : // Animation variables
@@ -44,31 +45,68 @@ MonkeyAnimation::MonkeyAnimation()
      */
 }
 
+/*  Initialize
+ *      Set pointers to Animator, RigidBody, and Transform using GetOwner()->GetComponent<ComponentType>()
+ *      Set the indices of each animation using animator->GetAnimationIndex("AnimationName") where "AnimationName" is the name of the animation you want to retrieve (these should match the names you gave them in Level1::Load)
+ *      Play the idle animation by using the Play function on the animation component and passing it idleAnimation as the chosen animation
+ *      Store the original scale of the object (found in the transform) in the appropriate member variable
+ */
 // Initialize this component (happens at object creation).
 void MonkeyAnimation::Initialize()
 {
-    animator->AddAnimation(0);
+    animator = GetOwner()->GetComponent<Animator>();
+    
 }
 
+/*  Update
+ *      Call the ChooseNextState function
+ *      Call the ChangeCurrentState function
+ *      Call the FlipSprite function
+ */
 // Fixed update function for this component.
 // Params:
 //   dt = The (fixed) change in time since the last step.
 void MonkeyAnimation::Update(float dt)
 {
+    ChooseNextState();
+    ChangeCurrentState();
+    FlipSprite();    
 }
-//------------------------------------------------------------------------------
-// Private Functions:
-//------------------------------------------------------------------------------
 
+/*  ChooseNextState
+ *      If velocity.y is not zero
+ *          Set the next state to the jump state
+ *      Else if velocity.x is not zero
+ *          Set the next state to the walk state
+ *      Else
+ *          Set the next state to the idle state
+ */
 // Choose the correct state based on velocity.
 void MonkeyAnimation::ChooseNextState()
 {
 }
+
+/*  ChangeCurrentState
+ *      If we are changing states (current and next states are not equal)
+ *          Set currentState to nextState
+ *          Use a switch statement on currentState:
+ *              In StateIdle, play the idle animation
+ *              In StateWalk, play the walk animation
+ *              In StateJump, play the jump animation
+ */
 // Change states and start the appropriate animation.
 void MonkeyAnimation::ChangeCurrentState()
 {
 }
 
+/*  FlipSprite
+ *      Note: The easiest way to "flip" a 2D sprite, is to make the corresponding component (x or y) of its scale negative.
+ *      If we are not in the idle state
+ *          If velocity.x is less than 0
+ *              Change scale.x (on transform) to the opposite of the original scale.x
+ *          Else if velocity.x is greater than 0
+ *              Change scale.x to the original scale.x
+ */
 // Flip the sprite based on velocity and current state.
 void MonkeyAnimation::FlipSprite() const
 {
