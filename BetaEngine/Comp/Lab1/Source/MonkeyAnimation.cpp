@@ -11,8 +11,8 @@
 
 #include "stdafx.h"          // Precompiled header
 #include "MonkeyAnimation.h" // Class file
-#define right true
-#define left false
+#define velocity physics->GetVelocity
+#define scale transform->GetScale
 
 using namespace Beta;
 
@@ -55,7 +55,10 @@ MonkeyAnimation::MonkeyAnimation()
 void MonkeyAnimation::Initialize()
 {
     animator = GetOwner()->GetComponent<Animator>();
-    
+    physics = GetOwner()->GetComponent<RigidBody>();
+    transform = GetOwner()->GetComponent<Transform>();
+
+    walkAnimation = animator->GetAnimationIndex("MonkeyWalk");
 }
 
 /*  Update
@@ -70,7 +73,7 @@ void MonkeyAnimation::Update(float dt)
 {
     ChooseNextState();
     ChangeCurrentState();
-    FlipSprite();    
+    FlipSprite();
 }
 
 /*  ChooseNextState
@@ -84,6 +87,12 @@ void MonkeyAnimation::Update(float dt)
 // Choose the correct state based on velocity.
 void MonkeyAnimation::ChooseNextState()
 {
+    if (velocity.y != 0)
+        nextState = StateJump;
+    else if (velocity.x == 0)
+        nextState = walkAnimation;
+    else
+        nextState = idleAnimation;
 }
 
 /*  ChangeCurrentState
@@ -97,6 +106,27 @@ void MonkeyAnimation::ChooseNextState()
 // Change states and start the appropriate animation.
 void MonkeyAnimation::ChangeCurrentState()
 {
+    if (nextState != currentState)
+    {
+        currentState = nextState;
+        switch (currentState)
+        {
+        case StateIdle:
+            animator->Play(walkAnimation);
+            break;
+
+        case StateWalk:
+            playWalk;
+            break;
+
+        case StateJump:
+            playJump;
+            break;
+
+        default:
+            break;
+        }
+    }
 }
 
 /*  FlipSprite
@@ -123,6 +153,14 @@ void MonkeyAnimation::FlipSprite() const
      *  if ((point1X > point2X && point2X < point3X) || (point1X < point2X && point2X > point3X))
      *      spr_dir = !spr_dir;
      */
+    if (currentState != idleAnimation)
+    {
+        if (velocity.x < 0)
+            scale.x = 0 - scale.x;
+        else
+        if (velocity.x > 0)
+            scale.x = 0 - scale.x;
+    }
 }
 // Create extra component functions - DO NOT REMOVE
 COMPONENT_SUBCLASS_DEFINITION(MonkeyAnimation)
