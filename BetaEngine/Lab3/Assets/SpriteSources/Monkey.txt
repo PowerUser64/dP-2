@@ -1,6 +1,0 @@
-Monkey
-{
-    numRows : 5
-    numCols : 3
-    texture : Monkey.png
-}

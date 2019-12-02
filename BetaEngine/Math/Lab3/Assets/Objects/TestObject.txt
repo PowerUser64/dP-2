@@ -1,0 +1,30 @@
+TestObject
+{
+	numComponents : 4
+	Transform
+	{
+		translation : { 2, 0 }
+		rotation : 0.5
+		scale : { 2, 6 }
+	}
+	Sprite
+	{
+		spriteSource : Monkey
+		color : { 1 , 0.5 , 0.1 , 1 }
+		zDepth : 0
+	}
+	Animator
+	{
+		playbackSpeed : 1
+		animationIndex : 0
+		numAnimations : 1
+		animationList : 
+		{
+			MonkeyWalk, 
+		}
+	}
+	PlayerController
+	{
+		speed : 2
+	}
+}
