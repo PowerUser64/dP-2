@@ -5,8 +5,13 @@
  	 *     Initialize base class (BetaObject) with the provided name parameter.
  	 *     Initialize other class variables.
  	 */
-Space::Space(const std::string& name)
+Space::Space(const std::string &name) : BetaObject("Space")
 {
+	/* bool paused;
+	 * Level *currentLevel;
+	 * Level *nextLevel;
+	 */
+	paused = 0, currentLevel = nullptr, nextLevel = nullptr;
 }
 
 /*  ~Space (destructor)
@@ -23,6 +28,8 @@ Space::~Space()
 	 */
 void Space::Update(float dt)
 {
+	std::cout << "Space::Update\n";
+	if (nextLevel != nullptr)
 }
 
 /*  Shutdown
@@ -44,7 +51,7 @@ bool Space::IsPaused() const
 /* GetLevelName
 	 *     Simple get/set functions. Self-explanatory.
 	 */
-const std::string& Space::GetLevelName() const
+const std::string &Space::GetLevelName() const
 {
 	// TODO: insert return statement here
 }
@@ -60,7 +67,7 @@ void Space::SetPaused(bool value)
 	 *     Set the next level to the given parameter.
 	 *     Set the level's owner to the space (ensures the level's GetSpace function works correctly).
 	 */
-void Space::SetLevel(Level* level)
+void Space::SetLevel(Level *level)
 {
 }
 
