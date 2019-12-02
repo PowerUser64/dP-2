@@ -23,10 +23,7 @@
 // Public Structures:
 //------------------------------------------------------------------------------
 
-/*
- *
- * 
- *     All functions aside from the constructor need to print out "Level1::" followed by the name of the function. For example, the Initialize function should print out "Level1::Initialize".
+/*     All functions aside from the constructor need to print out "Level1::" followed by the name of the function. For example, the Initialize function should print out "Level1::Initialize".
  *     In the constructor, initialize the base class, and initialize lives to 3.
  *     In the Update function, decrease lives by 1. When lives reaches 0, switch to Level 2. If you haven't implemented Level 2 yet, you can quit the game instead (EngineCore::GetInstance().Stop()) but you'll need to remember to go back and change this later.
  */
