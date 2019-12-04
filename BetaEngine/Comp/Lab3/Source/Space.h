@@ -43,7 +43,7 @@ public:
  	 *     Initialize other class variables.
  	 */
 
-	Space(const std::string &name);
+	Space(const std::string &name = "no name");
 
 	// Destructor
 	/*  ~Space (destructor)

@@ -5,7 +5,7 @@
 // Project:		BetaFramework
 // Course:		WANIC VGP2 2018-2019
 //
-// Copyright © 2018 DigiPen (USA) Corporation.
+// Copyright ï¿½ 2018 DigiPen (USA) Corporation.
 //
 //------------------------------------------------------------------------------
 
@@ -14,6 +14,10 @@
 //------------------------------------------------------------------------------
 
 #include "stdafx.h"
+#include "Space.h"
+#include "Level.h"
+#include "Level1.h"
+#include "Level2.h"
 
 //------------------------------------------------------------------------------
 
@@ -35,11 +39,11 @@ int WINAPI WinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prevInstance, _In
 	UNREFERENCED_PARAMETER(instance);
 
 	using namespace Beta;
-	EngineCore& engine = EngineCore::GetInstance();
+	EngineCore &engine = EngineCore::GetInstance();
 
-	// TO-DO: Add additional modules to engine (Space)
+	Space *space = engine.AddModule<Space>();
 
-	// TO-DO: Set initial level of space to the first level
+	space->SetLevel(new Levels::Level1());
 
 	// Game engine goes!
 	StartupSettings settings;

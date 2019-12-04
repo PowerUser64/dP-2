@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Space.h"
+#include "Level.h"
 
 /*  Space (constructor)
  	 *     Initialize base class (BetaObject) with the provided name parameter.
@@ -30,6 +31,9 @@ void Space::Update(float dt)
 {
 	std::cout << "Space::Update\n";
 	if (nextLevel != nullptr)
+		ChangeLevel();
+	if (currentLevel != nullptr && !paused)
+		currentLevel->Update(dt);
 }
 
 /*  Shutdown
@@ -38,6 +42,8 @@ void Space::Update(float dt)
 	 */
 void Space::Shutdown()
 {
+	if (currentLevel != nullptr)
+		currentLevel->Shutdown(), currentLevel->Unload();
 }
 
 /*  IsPaused
@@ -45,7 +51,7 @@ void Space::Shutdown()
 	 */
 bool Space::IsPaused() const
 {
-	return false;
+	return paused;
 }
 
 /* GetLevelName
@@ -53,7 +59,7 @@ bool Space::IsPaused() const
 	 */
 const std::string &Space::GetLevelName() const
 {
-	// TODO: insert return statement here
+	return currentLevel->GetName();
 }
 
 /* SetPaused
@@ -61,6 +67,7 @@ const std::string &Space::GetLevelName() const
 	 */
 void Space::SetPaused(bool value)
 {
+	paused = value;
 }
 
 /*  SetLevel
@@ -69,6 +76,7 @@ void Space::SetPaused(bool value)
 	 */
 void Space::SetLevel(Level *level)
 {
+	nextLevel = level, nextLevel->SetOwner(this);
 }
 
 /*  RestartLevel
@@ -76,6 +84,7 @@ void Space::SetLevel(Level *level)
 	 */
 void Space::RestartLevel()
 {
+	nextLevel = currentLevel;
 }
 
 /*  ChangeLevel
@@ -92,4 +101,16 @@ void Space::RestartLevel()
  	 */
 void Space::ChangeLevel()
 {
+	if (currentLevel == nextLevel)
+	{
+		Shutdown();
+		currentLevel->Initialize();
+	}
+	else
+	{
+		currentLevel->Shutdown();
+		currentLevel->Unload();
+		nextLevel->Load();
+		nextLevel->Initialize();
+	}
 }
