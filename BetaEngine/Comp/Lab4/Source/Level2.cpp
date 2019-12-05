@@ -3,7 +3,7 @@
 
 #include "Space.h"
 // print what function (fn) it's in (with less code)
-#define fn(str) std::cout << "Level2::" << str << std::endl
+#define fn(str) ;//std::cout << "Level2::" << str << std::endl
 
 /* You'll need to implement the functions listed in Level1.h in a new Level1.cpp file:
  *    All functions aside from the constructor need to print out "Level2::" followed by the name of the function. For example, the Initialize function should print out "Level2::Initialize".

@@ -11,27 +11,28 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Source\Level.cpp" />
-    <ClCompile Include="Source\Level1.cpp" />
-    <ClCompile Include="Source\Level2.cpp" />
     <ClCompile Include="Source\Main.cpp" />
-    <ClCompile Include="Source\Space.cpp" />
     <ClCompile Include="Source\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Source\Animation.h" />
+    <ClInclude Include="Source\Animator.h" />
     <ClInclude Include="Source\Level.h" />
     <ClInclude Include="Source\Level1.h" />
     <ClInclude Include="Source\Level2.h" />
+    <ClInclude Include="Source\MeshHelper.h" />
     <ClInclude Include="Source\Space.h" />
+    <ClInclude Include="Source\Sprite.h" />
+    <ClInclude Include="Source\SpriteSource.h" />
     <ClInclude Include="Source\stdafx.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{553D497C-DD10-4B3D-9F5A-CC4267744407}</ProjectGuid>
-    <RootNamespace>CS230Lab3</RootNamespace>
+    <RootNamespace>CS230Lab4</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -85,7 +86,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SupportJustMyCode>false</SupportJustMyCode>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <AdditionalDependencies>BetaLow_x64_D.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -110,13 +111,12 @@ xcopy FreeType\lib\win64\freetype.dll "$(OutDir)" /Y</Command>
       <AdditionalOptions>
       </AdditionalOptions>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <TreatWarningAsError>true</TreatWarningAsError>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>BetaLow_x64.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <IgnoreSpecificDefaultLibraries>
-      </IgnoreSpecificDefaultLibraries>
     </Link>
     <PostBuildEvent>
       <Command>xcopy LowLevelAPI\lib\BetaLow_x64.dll "$(OutDir)" /Y

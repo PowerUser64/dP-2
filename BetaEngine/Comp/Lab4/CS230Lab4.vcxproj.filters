@@ -16,23 +16,17 @@
     <Filter Include="Game\Behaviors">
       <UniqueIdentifier>{30b4313e-2f34-40ba-9613-d250bab122eb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="High-Level API\Graphics">
+      <UniqueIdentifier>{56c056ef-4a8e-47a6-ac6e-dcc7fb92729d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="High-Level API\Spaces">
+      <UniqueIdentifier>{27774d28-e5e6-4932-9794-c1ddede64c03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source\Main.cpp" />
     <ClCompile Include="Source\stdafx.cpp">
       <Filter>Precompiled</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Space.cpp">
-      <Filter>High-Level API</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Level.cpp">
-      <Filter>High-Level API</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Level1.cpp">
-      <Filter>Game\Levels</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\Level2.cpp">
-      <Filter>Game\Levels</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -42,14 +36,29 @@
     <ClInclude Include="Source\Level1.h">
       <Filter>Game\Levels</Filter>
     </ClInclude>
+    <ClInclude Include="Source\Sprite.h">
+      <Filter>High-Level API\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\SpriteSource.h">
+      <Filter>High-Level API\Graphics</Filter>
+    </ClInclude>
     <ClInclude Include="Source\Level.h">
-      <Filter>High-Level API</Filter>
+      <Filter>High-Level API\Spaces</Filter>
     </ClInclude>
     <ClInclude Include="Source\Space.h">
-      <Filter>High-Level API</Filter>
+      <Filter>High-Level API\Spaces</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Animation.h">
+      <Filter>High-Level API\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Source\Level2.h">
       <Filter>Game\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\MeshHelper.h">
+      <Filter>High-Level API\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Animator.h">
+      <Filter>High-Level API\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

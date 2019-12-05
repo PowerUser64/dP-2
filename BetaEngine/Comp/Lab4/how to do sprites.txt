@@ -1,0 +1,11 @@
+	// use the sprite shader
+	GraphicsEngine & graphics = *EngineGetModule(GraphicsEngine);
+	graphics.GetSpriteShader().Use();
+	// set texture of object
+	texture->Use(numCols, numRows, flipX, flipY, uvoffset);
+	// set color of object
+	graphics.SetSpriteBlendColor(color);
+	// set position of object
+	graphics.SetTransform(Vector2D(objPosX, objPosY);
+	// drawing the mesh (list of triangles 🔻)
+	mesh->draw();

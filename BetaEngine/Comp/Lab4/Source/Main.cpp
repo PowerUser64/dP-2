@@ -5,7 +5,7 @@
 // Project:		BetaFramework
 // Course:		WANIC VGP2 2018-2019
 //
-// Copyright ï¿½ 2018 DigiPen (USA) Corporation.
+// Copyright © 2018 DigiPen (USA) Corporation.
 //
 //------------------------------------------------------------------------------
 
@@ -14,10 +14,12 @@
 //------------------------------------------------------------------------------
 
 #include "stdafx.h"
+
+// Engine modules
 #include "Space.h"
-#include "Level.h"
+
+// Initial game state
 #include "Level1.h"
-#include "Level2.h"
 
 //------------------------------------------------------------------------------
 
@@ -38,20 +40,23 @@ int WINAPI WinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prevInstance, _In
 	UNREFERENCED_PARAMETER(show);
 	UNREFERENCED_PARAMETER(instance);
 
+	// TO-DO: Add additional modules to engine
 	using namespace Beta;
-	EngineCore &engine = EngineCore::GetInstance();
+	EngineCore& engine = EngineCore::GetInstance();
 
-	Space *space = engine.AddModule<Space>();
+	// TO-DO: Set initial level to the first level
 
-	space->SetLevel(new Levels::Level1());
-
-	// Game engine goes!
 	StartupSettings settings;
 	settings.windowWidth = 800;
 	settings.windowHeight = 600;
-	settings.framerateCap = 200;
+	//settings.framerateCap = 200;
 
+	// TO DO: Redirect std::cout to file
+
+	// Game engine goes!
 	engine.Start(settings);
 
+	// TO-DO: Restore std::cout to console
+
 	return 0;
-	}
+}

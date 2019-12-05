@@ -1,0 +1,98 @@
+Beta Framework Low-Level API version: 0.7.2
+
+OpenGL version supported: 3.3.0 NVIDIA 384.94
+OpenGL shader version supported: 3.30 NVIDIA via Cg compiler
+Compiling shader program 2 vertex shader...
+Shader compiled successfully.
+Compiling shader program 3 fragment shader...
+Shader compiled successfully.
+Shader program 1: spriteShader.vert, spriteShader.frag
+Shaders linked successfully.
+Compiling shader program 5 vertex shader...
+Shader compiled successfully.
+Compiling shader program 6 fragment shader...
+Shader compiled successfully.
+Shader program 4: passthroughShader.vert, passthroughShader.frag
+Shaders linked successfully.
+Compiling shader program 8 vertex shader...
+Shader compiled successfully.
+Compiling shader program 9 fragment shader...
+Shader compiled successfully.
+Shader program 7: spriteShader.vert, fontShader.frag
+Shaders linked successfully.
+Level1::Load
+Level1::Initialize
+Level1::Shutdown
+Level1::Unload
+Level2::Load
+Level2::Initialize
+Animator::Play
+Sprite::SetFrame(0)
+Animator::Update
+Sprite::SetFrame(1)
+Animator::Update
+Sprite::SetFrame(2)
+Animator::Update
+Sprite::SetFrame(3)
+Animator::Update
+Sprite::SetFrame(4)
+Animator::Update
+Sprite::SetFrame(5)
+Animator::Update
+Sprite::SetFrame(6)
+Animator::Update
+Sprite::SetFrame(7)
+Animator::Update
+Sprite::SetFrame(0)
+Animator::Update
+Sprite::SetFrame(1)
+Animator::Update
+Sprite::SetFrame(2)
+Animator::Update
+Sprite::SetFrame(3)
+Animator::Update
+Sprite::SetFrame(4)
+Animator::Update
+Sprite::SetFrame(5)
+Animator::Update
+Sprite::SetFrame(6)
+Animator::Update
+Sprite::SetFrame(7)
+Level2::Shutdown
+Level2::Initialize
+Animator::Play
+Sprite::SetFrame(7)
+Animator::Update
+Sprite::SetFrame(0)
+Animator::Update
+Sprite::SetFrame(1)
+Animator::Update
+Sprite::SetFrame(2)
+Animator::Update
+Sprite::SetFrame(3)
+Animator::Update
+Sprite::SetFrame(4)
+Animator::Update
+Sprite::SetFrame(5)
+Animator::Update
+Sprite::SetFrame(6)
+Animator::Update
+Sprite::SetFrame(7)
+Animator::Update
+Sprite::SetFrame(0)
+Animator::Update
+Sprite::SetFrame(1)
+Animator::Update
+Sprite::SetFrame(2)
+Animator::Update
+Sprite::SetFrame(3)
+Animator::Update
+Sprite::SetFrame(4)
+Animator::Update
+Sprite::SetFrame(5)
+Animator::Update
+Sprite::SetFrame(6)
+Animator::Update
+Sprite::SetFrame(7)
+Level2::Shutdown
+Level2::Unload
