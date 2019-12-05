@@ -28,6 +28,33 @@
     <ClCompile Include="Source\stdafx.cpp">
       <Filter>Precompiled</Filter>
     </ClCompile>
+    <ClCompile Include="Source\Space.cpp">
+      <Filter>High-Level API\Spaces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Level.cpp">
+      <Filter>High-Level API\Spaces</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\SpriteSource.cpp">
+      <Filter>High-Level API\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Sprite.cpp">
+      <Filter>High-Level API\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\MeshHelper.cpp">
+      <Filter>High-Level API\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Animator.cpp">
+      <Filter>High-Level API\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Animation.cpp">
+      <Filter>High-Level API\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Level2.cpp">
+      <Filter>Game\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Level1.cpp">
+      <Filter>Game\Levels</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\stdafx.h">

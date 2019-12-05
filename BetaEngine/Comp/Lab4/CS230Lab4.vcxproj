@@ -11,7 +11,16 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Source\Animation.cpp" />
+    <ClCompile Include="Source\Animator.cpp" />
+    <ClCompile Include="Source\Level.cpp" />
+    <ClCompile Include="Source\Level1.cpp" />
+    <ClCompile Include="Source\Level2.cpp" />
     <ClCompile Include="Source\Main.cpp" />
+    <ClCompile Include="Source\MeshHelper.cpp" />
+    <ClCompile Include="Source\Space.cpp" />
+    <ClCompile Include="Source\Sprite.cpp" />
+    <ClCompile Include="Source\SpriteSource.cpp" />
     <ClCompile Include="Source\stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
