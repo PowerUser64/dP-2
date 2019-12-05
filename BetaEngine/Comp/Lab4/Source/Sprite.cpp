@@ -1,8 +1,25 @@
 #include "stdafx.h"
 #include "Sprite.h"
 
+
+
 Sprite::Sprite(Beta::Mesh* mesh_, const SpriteSource* spriteSource_)
 {
+	// The frame currently being displayed (for sprite sheets).
+	/* unsigned int */ frameIndex = 0;
+
+	// The sprite source used when drawing (simple colored mesh will have no sprite source).
+	/* const SpriteSource */ *spriteSource = nullptr;
+
+	// The mesh used to draw the sprite.
+	/* Beta::Mesh **/ mesh;
+
+	// Color used for blending/tint
+	/* Beta::Color */ color = Beta::Colors::Green;
+
+	// Mirroring
+	/* bool */ flipX = 1;
+	/* bool */ flipY = 1;
 }
 
 void Sprite::Draw()

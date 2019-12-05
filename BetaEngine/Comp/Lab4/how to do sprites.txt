@@ -1,3 +1,7 @@
+https://canvas.digipen.edu/courses/1232/files/338547/download?download_frd=1
+
+
+
 	// use the sprite shader
 	GraphicsEngine & graphics = *EngineGetModule(GraphicsEngine);
 	graphics.GetSpriteShader().Use();
@@ -9,3 +13,29 @@
 	graphics.SetTransform(Vector2D(objPosX, objPosY);
 	// drawing the mesh (list of triangles 🔻)
 	mesh->draw();
+
+
+
+	// Get access to the MeshFactorymodule
+	using namespace Beta;
+	MeshFactory& meshFactory = *EngineGetModule(MeshFactory);
+	// 1 triangle at a time
+	// Vertex(Vector2D(x, y), color)
+	meshFactory.AddTriangle(Vertex(Vector2D(-25.5f, -25.5f), Colors::Red), Vertex(Vector2D(25.5f, 0.0f), Colors::Yellow), Vertex(Vector2D(-25.5f, 25.5f), Colors::Red));
+	// Saving the mesh (list of triangles) in mesh pointer
+	Mesh* mesh = meshFactory.EndCreate();
+	if(mesh == nullptr) 
+		std::cout << "Failed to create mesh!"<< std::endl;
+
+
+
+	// Get access to the MeshFactorymodule
+	using namespace Beta;
+	MeshFactory& meshFactory= *EngineGetModule(MeshFactory)
+	// This shape has 2 triangles
+	// Vertex(Vector2D(x, y), Vector2D(u, v))
+	meshFactory.AddTriangle(Vertex(Vector2D(-xSize, -ySize), Vector2D(0.0f, vSize)), Vertex(Vector2D(xSize, -ySize), Vector2D(uSize, vSize)), Vertex(Vector2D(-xSize, ySize), Vector2D(0.0f, 0.0f)));
+	meshFactory.AddTriangle(Vertex(Vector2D(xSize, -ySize), Vector2D(uSize, vSize)), Vertex(Vector2D(xSize, ySize), Vector2D(uSize, 0.0f)), Vertex(Vector2D(-xSize, ySize), Vector2D(0.0f, 0.0f)));
+	// Saving the mesh (list of triangles) in mesh pointerMesh* mesh = meshFactory.EndCreate();
+	if(mesh == nullptr) 
+		std::cout << "Failed to create mesh!"<< std::endl;
