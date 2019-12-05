@@ -61,8 +61,6 @@ Sprite::SetFrame(7)
 Level2::Shutdown
 Level2::Initialize
 Animator::Play
-Sprite::SetFrame(7)
-Animator::Update
 Sprite::SetFrame(0)
 Animator::Update
 Sprite::SetFrame(1)
