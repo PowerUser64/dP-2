@@ -82,10 +82,10 @@ Verify that the code you've written compiles. You may get linker errors for call
 
 We're going to use Level 1 to test drawing a sprite without a texture/sprite source. The following changes need to be made to the Level1.cpp file (taken from CS230 Lab 3):
 
-1.  In the **constructor**, initialize any new class variables to sane values. Change the value of _lives _from 3 to 256.
-2.  In the **Load **function, add code to create a triangle mesh (using three distinct colors such as red, green, and blue) and store it in the mesh pointer (you wrote a function for this earlier in _Part 2_ of this assignment).
-3.  In the **Initialize **function, create a new Sprite, store it in the appropriate variable, and make sure it's using the mesh you created in Load.
-4.  The **Shutdown **and **Unload **functions should be deleting what you created in _Initialize_ and _Load, _respectively.
+1.  In the **constructor**, initialize any new class variables to sane values. Change the value of _lives_ from 3 to 256.
+2.  In the **Load** function, add code to create a triangle mesh (using three distinct colors such as red, green, and blue) and store it in the mesh pointer (you wrote a function for this earlier in _Part 2_ of this assignment).
+3.  In the **Initialize** function, create a new Sprite, store it in the appropriate variable, and make sure it's using the mesh you created in Load.
+4.  The **Shutdown** and **Unload** functions should be deleting what you created in _Initialize_ and _Load, _respectively.
 5.  In the **Update** function, draw the sprite.
 
 Once you've written this code, test to see if Level 1 is correctly drawing the colored triangle as shown in the picture at the top of this page.
@@ -99,7 +99,7 @@ The sprite source class stores a texture and figures out what the UV coordinates
 2.  UseTexture
     *   Calculate the UV offset using _GetUV_ and store it in a variable.
     *   Call the texure's _Use _function, passing 1 and 1 for the rows and columns, using the appropriate class variables for the other parameters. You can leave the last param (the shader) blank; it will default to the last used shader.
-    *   _\[NOTE:_ _Yes, we do have actual variables for the rows and columns of the sprite source that we could pass in here, in which case the shader would take care of drawing the correct portion of the texture for us, which is ideal. However**,** I want you_ _to do the work of calculating which portion of the texture to display when you create the quad mesh in MeshHelper.cpp. This is just to prove you can get the math correct. If you pass in the columns and rows here instead of doing the UV calculations in the mesh creation, I will dock you points for this assignment. In the future, however, I suggest passing in the column/row info here, as this will allow you to use the same mesh for nearly every 2D sprite.\]_
+    *   _\[NOTE:_ _Yes, we do have actual variables for the rows and columns of the sprite source that we could pass in here, in which case the shader would take care of drawing the correct portion of the texture for us, which is ideal. However, I want you_ _to do the work of calculating which portion of the texture to display when you create the quad mesh in MeshHelper.cpp. This is just to prove you can get the math correct. If you pass in the columns and rows here instead of doing the UV calculations in the mesh creation, I will dock you points for this assignment. In the future, however, I suggest passing in the column/row info here, as this will allow you to use the same mesh for nearly every 2D sprite.\]_
 3.   GetFrameCount
     *   Return the total frame count (calculated based off of _numRows _and _numCols_).
 4.  GetUV
