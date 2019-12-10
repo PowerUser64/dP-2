@@ -14,6 +14,8 @@ using namespace Beta;
 // Creates an instance of Level 2.
 /*    In the constructor, initialize the base class, initialize lives to 2, and initialize maxHealth to 2
  */
+/*1.  In the **constructor**, initialize any new class variables to sane values. No changes need to be made to health or lives.
+ */
 Levels::Level2::Level2() : Level("Level2")
 {
     /* unsigned lives;
@@ -24,6 +26,9 @@ Levels::Level2::Level2() : Level("Level2")
 }
 
 // Load the resources associated with Level 2.
+/* 2.  In the **Load** function, add code to create a quad mesh and store it in the mesh pointer, load the Monkey.png texture, and create a sprite source that uses that texture (refer to the image to find the number of columns and rows).
+ * 
+ */
 void Levels::Level2::Load()
 {
     fn("Load");
@@ -31,6 +36,9 @@ void Levels::Level2::Load()
 
 // Initialize the memory associated with Level 2.
 /*    In the Initialize function, set currentHealth to maxHealth.
+ */
+/*3.  In the **Initialize** function, create a new Sprite, making sure it uses the mesh and sprite source you created in the Load function.
+ *
  */
 void Levels::Level2::Initialize()
 {
@@ -60,12 +68,16 @@ void Levels::Level2::Update(float dt)
 }
 
 // Shutdown any memory associated with Level 2.
+/*4.  The **Shutdown** and **Unload** functions should be deleting what you created in _Initialize_ and _Load_.
+ */
 void Levels::Level2::Shutdown()
 {
     fn("Shutdown");
 }
 
 // Unload the resources associated with Level 2.
+/* 5.  In the **Update** function, draw the sprite. Also comment out the code that deals with health, lives, and shutting down the game. We'll restore that code later.
+ */
 void Levels::Level2::Unload()
 {
     fn("Unload");
