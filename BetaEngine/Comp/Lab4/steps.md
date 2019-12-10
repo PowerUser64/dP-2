@@ -117,9 +117,9 @@ Once you have these functions implemented, you can move on to implementing Level
 The following changes need to be made to the Level2.cpp file:
 
 1.  In the **constructor**, initialize any new class variables to sane values. No changes need to be made to health or lives.
-2.  In the **Load **function, add code to create a quad mesh and store it in the mesh pointer, load the Monkey.png texture, and create a sprite source that uses that texture (refer to the image to find the number of columns and rows).
-3.  In the **Initialize **function, create a new Sprite, making sure it uses the mesh and sprite source you created in the Load function.
-4.  The **Shutdown **and **Unload **functions should be deleting what you created in _Initialize_ and _Load_.
+2.  In the **Load** function, add code to create a quad mesh and store it in the mesh pointer, load the Monkey.png texture, and create a sprite source that uses that texture (refer to the image to find the number of columns and rows).
+3.  In the **Initialize** function, create a new Sprite, making sure it uses the mesh and sprite source you created in the Load function.
+4.  The **Shutdown** and **Unload** functions should be deleting what you created in _Initialize_ and _Load_.
 5.  In the **Update** function, draw the sprite. Also comment out the code that deals with health, lives, and shutting down the game. We'll restore that code later.
 
 Once you've written this code, test to see if Level 2 is correctly drawing the first frame of the monkey sprite sheet.
@@ -187,7 +187,7 @@ Now we can finally test animations!
 The following changes need to be made to the Level2.cpp file:
 
 1.  In the **constructor,** initialize the animation frame count to 8 and duration to 0.2f.
-2.  In the **Load **function, create an _Animation_ using the appropriate class variables as parameters for its constructor.
+2.  In the **Load** function, create an _Animation_ using the appropriate class variables as parameters for its constructor.
 3.  In the **Initialize** function, create an _Animator_, add the animation you created in the load function, and play it. Use the default playback speed and make sure it loops.
 4.  In the **Update** function,
     *   Update the animator using _dt_.
