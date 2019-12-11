@@ -1,5 +1,8 @@
-#right-side-wrapper { height: 100%; }
-
+## What I'm confused on
+1.  Part one
+2.  Part Six
+3.  
+----------------------
 CS230 Lab 4: Graphics
 =====================
 
