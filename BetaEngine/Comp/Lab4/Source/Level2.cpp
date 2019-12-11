@@ -18,27 +18,71 @@ using namespace Beta;
  */
 Levels::Level2::Level2() : Level("Level2")
 {
-    /* unsigned lives;
-	 * unsigned maxHealth;
+    /* 	// Mesh and texture for sprite source
+	 *	Beta::Mesh* mesh;
+	 *	Beta::Texture* texture;
+     *
+	 *	// Sprite source variables
+	 *	SpriteSource* spriteSource;
+	 *	unsigned columns;
+	 *	unsigned rows;
+     *
+	 *	// Sprite
+	 *	Sprite* sprite;
+     *
+	 *	// Animation variables
+	 *	Animator* animator;
+	 *	Animation* animation;
+	 *	unsigned animFrameStart;
+	 *	unsigned animFrameCount;
+	 *	float animFrameDuration;
+     *
+	 *	// Level data
+	 *	unsigned lives;
+	 *	unsigned maxHealth;
+	 *	unsigned currentHealth;
      */
-    lives = 2;
-    maxHealth = 2;
+    // Mesh and texture for sprite source
+    mesh = nullptr;
+    texture = nullptr;
+    // Sprite source variables
+    spriteSource = nullptr;
+    columns = 3;
+    rows = 2;
+    // Sprite
+    sprite = nullptr;
+    // Animation variables
+    animator = nullptr;
+    animation = nullptr;
+    animFrameStart = 0;
+    animFrameCount = 6;
+    animFrameDuration = 0.01667f;
+    // Level data
+    lives = 3;
+    maxHealth = 10;
+    currentHealth = 9;
 }
 
 // Load the resources associated with Level 2.
-/* 2.  In the **Load** function, add code to create a quad mesh and store it in the mesh pointer, load the Monkey.png texture, and create a sprite source that uses that texture (refer to the image to find the number of columns and rows).
- * 
+/* 
+ * 2.  In the **Load** function, add code to 
+ *  - create a quad mesh and store it in the mesh pointer,
+ *  - load the Monkey.png texture,
+ *  - and create a sprite source that uses that texture (refer to the image to find the number of columns and rows).
  */
 void Levels::Level2::Load()
 {
     fn("Load");
+    mesh = new Mesh;
+    // load the png
+    // ????????????
 }
 
 // Initialize the memory associated with Level 2.
 /*    In the Initialize function, set currentHealth to maxHealth.
  */
-/*3.  In the **Initialize** function, create a new Sprite, making sure it uses the mesh and sprite source you created in the Load function.
- *
+/* 3.  In the **Initialize** function, 
+ *  - create a new Sprite, making sure it uses the mesh and sprite source you created in the Load function.
  */
 void Levels::Level2::Initialize()
 {
@@ -68,7 +112,7 @@ void Levels::Level2::Update(float dt)
 }
 
 // Shutdown any memory associated with Level 2.
-/*4.  The **Shutdown** and **Unload** functions should be deleting what you created in _Initialize_ and _Load_.
+/* 4.  The **Shutdown** and **Unload** functions should be deleting what you created in _Initialize_ and _Load_.
  */
 void Levels::Level2::Shutdown()
 {
