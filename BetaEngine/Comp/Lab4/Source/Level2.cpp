@@ -5,6 +5,27 @@
 // print what function (fn) it's in (with less code)
 #define fn(str) ;//std::cout << "Level2::" << str << std::endl
 
+/* 1.  In the **constructor,** initialize the animation frame count to 8 and duration to 0.2f.
+ * 2.  In the **Load** function, create an _Animation_ using the appropriate class variables as parameters for its constructor.
+ * 3.  In the **Initialize** function, create an _Animator_, add the animation you created in the load function, and play it. Use the default playback speed and make sure it loops.
+ * 4.  In the **Update** function,
+ *     *   Update the animator using _dt_.
+ * 5.  Make sure you delete the proper things in the **Shutdown**, **Unload**.
+ * 
+ * Test to make sure the animation plays and loops correctly. Once you've done that, you're almost ready to test against the expected output in _traceMaster.log. _First, make the following changes:
+ * 
+ * 1.  In the **Initialize** function, change the frame duration to 0.0f. This will ensure frame time won't affect your program's output when compared with mine.
+ * 2.  In the **Update** function,
+ *     *   Uncomment the code that deals with health and lives.
+ *     *   Add the following if statement before that code:
+ *         *   if the animation is not done, return
+ *     *   (Every time the animation finishes a loop, health goes down by 1.)
+ * 
+ * Now your program will run extremely quickly on Level 2. To redirect output to a text file, follow these procedures (different from last time):
+ * 
+ * *   In Main.cpp, add code to redirect the output of std::cout to a file called _trace.txt. _You can refer to your previous lab for how to do this.
+ */
+
 /* You'll need to implement the functions listed in Level1.h in a new Level1.cpp file:
  *    All functions aside from the constructor need to print out "Level2::" followed by the name of the function. For example, the Initialize function should print out "Level2::Initialize".
  */

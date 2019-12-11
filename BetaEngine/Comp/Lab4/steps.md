@@ -1,6 +1,6 @@
 ## What I'm confused on
 1.  Part one
-2.  Part Six
+2.  Part Six - loading png in level2.cpp
 3.  
 ----------------------
 CS230 Lab 4: Graphics

@@ -1,11 +1,39 @@
 #include "stdafx.h"
 #include "Animator.h"
+#include "Animation.h"
 
 /* 1.  Animation (constructor)
  *     *   Same procedure as for other constructors. The only exception to the usual sane defaults is _playbackSpeed, _which should be set to 1.0f.
  */
-Animator::Animator(Sprite* sprite_)
+Animator::Animator(Sprite *sprite_)
 {
+	// The current animation being played.
+	// size_t
+	animationIndex = 0;
+
+	// How fast animations will play.
+	// float
+	playbackSpeed = 0.01667;
+
+	// True if the animation is running; false if the animation has stopped.
+	// bool
+	isRunning = true;
+
+	// True if the animation loops back to the beginning.
+	// bool
+	isLooping = 0;
+
+	// True if the end of the animation has been reached, false otherwise.
+	// bool
+	isDone = 0;
+
+	// Components
+	// Sprite *
+	sprite = nullptr;
+
+	// List of animations used by this controller
+	// Beta::Array<const Animation *>
+	animationList = 0;
 }
 
 /* 3.  Update
@@ -25,17 +53,24 @@ void Animator::Update(float dt)
  *     *   Get the animation in the animation list at the given index and use it to do the following:
  *         *   Set the sprite's sprite source to the animation's sprite source
  *         *   Set the sprite's frame to the current frame index of the animation.
- */void Animator::Play(size_t animationIndex, float playbackSpeed, bool loop)
+ */
+void Animator::Play(size_t _animationIndex, float _playbackSpeed, bool _loop)
 {
+	if (_animationIndex < animationList.Size())
+		return;
+	animationIndex = _animationIndex;
+	playbackSpeed = _playbackSpeed;
+	isLooping = _loop;
 }
 
 /* 4.  AddAnimation
  *     *   Add the given animation to the animation list using the _PushBack_ function.
  *     *   Return the index used for the animation (size of the list - 1).
  */
-size_t Animator::AddAnimation(const Animation* animation)
+size_t Animator::AddAnimation(const Animation *animation)
 {
-	return size_t();
+	animationList.PushBack(animation);
+	return animationList.Size() - 1;
 }
 
 /* 5.  GetAnimationIndex
@@ -43,9 +78,13 @@ size_t Animator::AddAnimation(const Animation* animation)
  *         *   Check if the animation matches the given name. If so, return it.
  *     *   If no animations matched the name, return 0. _(NOTE: This would be a place where we might consider throwing an exception, if we knew what an exception was...)_
  */
-size_t Animator::GetAnimationIndex(const std::string& name) const
+size_t Animator::GetAnimationIndex(const std::string &name) const
 {
-	return name;
+	for (int i = 0; i < animationList.Size; ++i)
+		if (animationList[i]->GetName() == name)
+			;
+	return i;
+	return 0;
 }
 
 /* 6.  GetCurrentAnimationIndex, IsDone, SetPlaybackSpeed
