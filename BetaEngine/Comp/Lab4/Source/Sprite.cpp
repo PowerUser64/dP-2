@@ -2,19 +2,21 @@
 #include "Sprite.h"
 #include "SpriteSource.h"
 
+using namespace Beta;
+
 Sprite::Sprite(Beta::Mesh *mesh_, const SpriteSource *spriteSource_)
 {
 	// The frame currently being displayed (for sprite sheets).
 	/* unsigned int */ frameIndex = 0;
 
 	// The sprite source used when drawing (simple colored mesh will have no sprite source).
-	/* const SpriteSource */ spriteSource = nullptr;
+	/* const SpriteSource */ spriteSource = spriteSource_;
 
 	// The mesh used to draw the sprite.
-	/* Beta::Mesh */ mesh = nullptr;
+	/* Beta::Mesh */ mesh = mesh_;
 
 	// Color used for blending/tint
-	/* Beta::Color */ color = Beta::Colors::Green;
+	/* Beta::Color */ color;
 
 	// Mirroring
 	/* bool */ flipX = 1;
@@ -35,6 +37,21 @@ void Sprite::Draw()
 	if (mesh == nullptr)
 		return;
 	
+	// Use sprite shader
+	GraphicsEngine& graphics = *EngineGetModule(GraphicsEngine);
+	graphics.GetSpriteShader().Use(); 
+	// Set texture of object
+	if (spriteSource != nullptr)
+		spriteSource->UseTexture(frameIndex, flipX, flipY);
+	else
+		graphics.GetDefaultTexture().Use();
+	
+	// Set color of object
+	graphics.SetSpriteBlendColor(color);
+	// Set position of object
+	graphics.SetTransform(Vector2D(0, 0), Vector2D(1, 1), 0);
+	// Drawing the mesh (list of triangles)
+	mesh->Draw();
 }
 
 /* 3.  SetAlpha
@@ -60,7 +77,7 @@ float Sprite::GetAlpha() const
 void Sprite::SetFrame(unsigned int _frameIndex)
 {
 	std::cout << "Sprite::SetFrame\n";
-	if (frameIndex < spriteSource->GetFrameCount)
+	if (frameIndex < spriteSource->GetFrameCount())
 		frameIndex = _frameIndex;
 }
 

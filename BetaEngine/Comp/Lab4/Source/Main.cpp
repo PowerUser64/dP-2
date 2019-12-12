@@ -5,7 +5,7 @@
 // Project:		BetaFramework
 // Course:		WANIC VGP2 2018-2019
 //
-// Copyright © 2018 DigiPen (USA) Corporation.
+// Copyright ï¿½ 2018 DigiPen (USA) Corporation.
 //
 //------------------------------------------------------------------------------
 
@@ -43,8 +43,9 @@ int WINAPI WinMain(_In_ HINSTANCE instance, _In_opt_ HINSTANCE prevInstance, _In
 	// TO-DO: Add additional modules to engine
 	using namespace Beta;
 	EngineCore& engine = EngineCore::GetInstance();
-
-	// TO-DO: Set initial level to the first level
+	
+	Space *space = engine.AddModule<Space>();
+	space->SetLevel(new Levels::Level1());
 
 	StartupSettings settings;
 	settings.windowWidth = 800;

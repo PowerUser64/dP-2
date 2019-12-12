@@ -42,7 +42,7 @@ Levels::Level1::Level1() : Level("Level1")
     sprite = nullptr;
 
     // unsigned
-    lives = 3;
+    lives = 256;
 }
 
 // Load the resources associated with Level 1.
@@ -75,7 +75,8 @@ void Levels::Level1::Update(float dt)
     std::cout << "  lives = " << lives << std::endl;
     if(lives == 0)
         GetSpace()->SetLevel(new Levels::Level2());
-    sprite->Draw();
+
+	sprite->Draw();
 }
 
 // Shutdown any memeary associated with Level 1.

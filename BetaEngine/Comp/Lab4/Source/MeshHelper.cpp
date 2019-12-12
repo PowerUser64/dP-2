@@ -11,13 +11,13 @@ using namespace Beta;
 Beta::Mesh *CreateTriangleMesh(const Beta::Color &color0, const Beta::Color &color1, const Beta::Color &color2)
 {
 	MeshFactory &meshFactory = *EngineGetModule(MeshFactory);
-	meshFactory.AddTriangle(Vertex(Vector2D(1, 0.3f), color0),
-							Vertex(Vector2D(-0.3f, 1), color1),
-							Vertex(Vector2D(0.3f, -1), color2));
+	meshFactory.AddTriangle(Vertex(Vector2D(1 * (0.5f), 0.3f * (0.5f)), color0),
+							Vertex(Vector2D(-0.3f * (0.5f), 1 * (0.5f)), color1),
+							Vertex(Vector2D(0.3f * (0.5f), -1 * (0.5f)), color2));
 	Mesh *mesh = meshFactory.EndCreate();
 	if (mesh == nullptr)
 		std::cout << "Failed to create mesh!" << std::endl;
-	return nullptr;
+	return mesh;
 }
 
 /*/ 
@@ -35,13 +35,19 @@ Beta::Mesh *CreateQuadMesh(const Beta::Vector2D &textureSize, const Beta::Vector
 	// Vertex(Vector2D(x, y), Vector2D(u, v))
 	MeshFactory &meshFactory = *EngineGetModule(MeshFactory);
 
-	meshFactory.AddTriangle(Vertex(Vector2D(-extents.x, -extents.y), Vector2D(0.0f, textureSize.y)), Vertex(Vector2D(extents.x, -extents.y), Vector2D(textureSize.x, textureSize.y)), Vertex(Vector2D(-extents.x, extents.y), Vector2D(0.0f, 0.0f)));
-	meshFactory.AddTriangle(Vertex(Vector2D(extents.x, -extents.y), Vector2D(textureSize.x, textureSize.y)), Vertex(Vector2D(extents.x, extents.y), Vector2D(textureSize.x, 0.0f)), Vertex(Vector2D(-extents.x, extents.y), Vector2D(0.0f, 0.0f)));
+	meshFactory.AddTriangle(
+	Vertex(Vector2D(-extents.x, -extents.y), Vector2D(0.0f,          textureSize.y)), // Lower Left
+	Vertex(Vector2D( extents.x, -extents.y), Vector2D(textureSize.x, textureSize.y)), // Lower Right
+	Vertex(Vector2D(-extents.x,  extents.y), Vector2D(0.0f,          0.0f)));         // Upper Left
+	meshFactory.AddTriangle(
+	Vertex(Vector2D( extents.x,  extents.y), Vector2D(textureSize.x, 0.0f)),          // Upper Right
+	Vertex(Vector2D( extents.x, -extents.y), Vector2D(textureSize.x, textureSize.y)), // Lower Right
+	Vertex(Vector2D(-extents.x,  extents.y), Vector2D(0.0f,          0.0f)));         // Upper Left
 	Mesh *mesh = meshFactory.EndCreate();
 
 	// Saving the mesh (list of triangles) in mesh pointerMesh* mesh = meshFactory.EndCreate();
 	if (mesh == nullptr)
 		std::cout << "Failed to create mesh!" << std::endl;
 
-	return nullptr;
+	return mesh;
 }

@@ -95,7 +95,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <TreatWarningAsError>true</TreatWarningAsError>
+      <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <Link>
       <AdditionalDependencies>BetaLow_x64_D.lib;%(AdditionalDependencies)</AdditionalDependencies>

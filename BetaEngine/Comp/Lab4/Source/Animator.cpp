@@ -80,10 +80,10 @@ size_t Animator::AddAnimation(const Animation *animation)
  */
 size_t Animator::GetAnimationIndex(const std::string &name) const
 {
-	for (int i = 0; i < animationList.Size; ++i)
+	size_t i = 0;
+	for (; i < animationList.Size(); ++i)
 		if (animationList[i]->GetName() == name)
-			;
-	return i;
+			return i;
 	return 0;
 }
 
