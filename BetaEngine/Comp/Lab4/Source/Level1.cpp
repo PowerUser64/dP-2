@@ -23,10 +23,6 @@ using namespace Beta;
  *  3.  In the **Initialize** function, create a new Sprite, store it in the appropriate variable, and make sure it's using the mesh you created in Load.
  *  4.  In the **Update** function, draw the sprite.
  *  5.  The **Shutdown** and **Unload** functions should be deleting what you created in _Initialize_ and _Load, _respectively.
- * 
- * 
- * 
- * 
  */
 
 // Creates an instance of Level 1.

@@ -5,9 +5,10 @@
 #include "Animation.h"
 #include "Animator.h"
 #include "SpriteSource.h"
+#include "Sprite.h"
 
 // print what function (fn) it's in (with less code)
-#define fn(str) ;//std::cout << "Level2::" << str << std::endl
+#define fn(str) ; //std::cout << "Level2::" << str << std::endl
 
 using namespace Beta;
 
@@ -50,7 +51,7 @@ Levels::Level2::Level2() : Level("Level2")
     // Sprite source variables
     spriteSource = nullptr;
     columns = 3;
-    rows = 2;
+    rows = 5;
     // Sprite
     sprite = nullptr;
     // Animation variables
@@ -78,7 +79,7 @@ Levels::Level2::Level2() : Level("Level2")
 void Levels::Level2::Load()
 {
     fn("Load");
-    mesh = CreateQuadMesh(Vector2D(1/columns, 1/rows), Vector2D(0.5, 0.5));
+    mesh = CreateQuadMesh(Vector2D(1.0f / columns, 1.0f / rows), Vector2D(0.5, 0.5));
     // load the png
     texture = Texture::CreateTextureFromFile("Monkey.png");
     // create animation
@@ -101,7 +102,10 @@ void Levels::Level2::Load()
 void Levels::Level2::Initialize()
 {
     fn("Intialize");
+    sprite = new Sprite(mesh, spriteSource);
+    animator = new Animator(sprite);
     currentHealth = maxHealth;
+    animFrameCount = 0.0f;
 }
 
 // Update Level 1.
@@ -126,13 +130,18 @@ void Levels::Level2::Initialize()
 void Levels::Level2::Update(float dt)
 {
     fn("Update");
+    animator->Update(dt);
+    sprite->Draw();
+    if (!animator->IsDone())
+        return;
     Space *space = GetSpace();
     --currentHealth;
     if (!currentHealth)
         --lives;
     if (!lives)
         EngineCore::GetInstance().Stop();
-	if (currentHealth == 0) space->RestartLevel();
+    if (currentHealth == 0)
+        space->RestartLevel();
 }
 
 // Shutdown any memory associated with Level 2.

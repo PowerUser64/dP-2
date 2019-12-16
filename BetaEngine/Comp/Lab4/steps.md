@@ -169,15 +169,15 @@ The purpose of the Animation class is simply to figure out what frame the sprite
         *   Make sure the frame index goes back to 0 if it reaches the last frame.
     *   Otherwise
         *   Make sure the frame index does not go past the last frame.
-    *   If the _isDone _param is not null
+    *   If the _isDone_ param is not null
         *   Set its value based on the current frame index. (Should be **true** if the current frame is the last frame.)
     *   Return the actual frame index the sprite should use by using by adding the starting frame to the frame index.
 3.  GetVirtualIndex
     *   _\[NOTE: The goal of this function is to figure out which frame we should be on based on how much time has passed. We will do this by adding the change in time to an accumulator. If the accumulator accumulates enough time, we advance the frame.\]_
-    *   Add time to the accumulator (_dt _times _playbackSpeed)._
+    *   Add time to the accumulator (_dt_ times _playbackSpeed_).
     *   While the accumulator meets or exceeds the frame duration
         *   Increase the current frame index.
-        *   Decrease the accumulator using _dt._
+        *   Decrease the accumulator using _dt_.
     *   Return the current frame.
     *   _\[You may run into issues if/when the frame duration is 0. I'll let you decide how to solve this if it becomes an issue.\]_
 4.  GetName, GetSpriteSource

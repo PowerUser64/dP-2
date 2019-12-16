@@ -19,8 +19,8 @@ Sprite::Sprite(Beta::Mesh *mesh_, const SpriteSource *spriteSource_)
 	/* Beta::Color */ color;
 
 	// Mirroring
-	/* bool */ flipX = 1;
-	/* bool */ flipY = 1;
+	/* bool */ flipX = 0;
+	/* bool */ flipY = 0;
 }
 
 /* 2.  Draw
