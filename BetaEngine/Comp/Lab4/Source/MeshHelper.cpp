@@ -11,9 +11,9 @@ using namespace Beta;
 Beta::Mesh *CreateTriangleMesh(const Beta::Color &color0, const Beta::Color &color1, const Beta::Color &color2)
 {
 	MeshFactory &meshFactory = *EngineGetModule(MeshFactory);
-	meshFactory.AddTriangle(Vertex(Vector2D(1 * (0.5f), 0.3f * (0.5f)), color0),
-							Vertex(Vector2D(-0.3f * (0.5f), 1 * (0.5f)), color1),
-							Vertex(Vector2D(0.3f * (0.5f), -1 * (0.5f)), color2));
+	meshFactory.AddTriangle(Vertex(Vector2D( 1.0f * (0.5f),  0.3f * (0.5f)), color0),
+							Vertex(Vector2D(-0.3f * (0.5f),  1.0f * (0.5f)), color1),
+							Vertex(Vector2D( 0.3f * (0.5f), -1.0f * (0.5f)), color2));
 	Mesh *mesh = meshFactory.EndCreate();
 	if (mesh == nullptr)
 		std::cout << "Failed to create mesh!" << std::endl;

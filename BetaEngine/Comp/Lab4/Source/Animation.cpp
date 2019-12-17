@@ -63,10 +63,11 @@ unsigned Animation::GetCurrentFrameIndex(float dt, float playbackSpeed, bool loo
 	if (looping && indx)
 		indx = 0;
 	else
-		index = index % frameCount;
-	if (isDone != nullptr && indx == frameCount)
-		isDone = true;
-	return 0;
+		indx = indx % frameCount;
+	if (isDone != nullptr && indx == frameCount-1)
+		*isDone = true;
+	// std::cout << "index is "<< indx << '\n';
+	return indx;
 }
 
 // Get the name of the animation.
@@ -92,7 +93,10 @@ const SpriteSource *Animation::GetSpriteSource() const
 */
 unsigned Animation::GetVirtualIndex(float dt, float playbackSpeed) const
 {
-	accumulator = dt * playbackSpeed;
+	accumulator += dt * playbackSpeed;
+	if(frameDuration == 0)
+		++currentVirtualFrame;
+	else
 	while (accumulator >= frameDuration)
 		++currentVirtualFrame, accumulator -= frameDuration;
 	return currentVirtualFrame;

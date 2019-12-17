@@ -8,7 +8,7 @@
 #include "Sprite.h"
 
 // print what function (fn) it's in (with less code)
-#define fn(str) ; //std::cout << "Level2::" << str << std::endl
+#define fn(str) std::cout << "Level2::" << str << std::endl
 
 using namespace Beta;
 
@@ -59,7 +59,7 @@ Levels::Level2::Level2() : Level("Level2")
     animation = nullptr;
     animFrameStart = 0;
     animFrameCount = 8;
-    animFrameDuration = 0.02f;
+    animFrameDuration = 0.2f;
     // Level data
     lives = 3;
     maxHealth = 10;
@@ -104,6 +104,7 @@ void Levels::Level2::Initialize()
     fn("Intialize");
     sprite = new Sprite(mesh, spriteSource);
     animator = new Animator(sprite);
+    animator->AddAnimation(animation);
     currentHealth = maxHealth;
     animFrameCount = 0.0f;
 }

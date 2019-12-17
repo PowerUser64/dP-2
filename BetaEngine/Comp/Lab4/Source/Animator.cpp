@@ -1,6 +1,9 @@
 #include "stdafx.h"
 #include "Animator.h"
 #include "Animation.h"
+#include "Sprite.h"
+
+#define fn(str) std::cout << "Level2::" << str << std::endl
 
 /* 1.  Animation (constructor)
  *     *   Same procedure as for other constructors. The only exception to the usual sane defaults is _playbackSpeed, _which should be set to 1.0f.
@@ -13,7 +16,7 @@ Animator::Animator(Sprite *sprite_)
 
 	// How fast animations will play.
 	// float
-	playbackSpeed = 0.01667;
+	playbackSpeed = 1;
 
 	// True if the animation is running; false if the animation has stopped.
 	// bool
@@ -29,7 +32,7 @@ Animator::Animator(Sprite *sprite_)
 
 	// Components
 	// Sprite *
-	sprite = nullptr;
+	sprite = sprite_;
 
 	// List of animations used by this controller
 	// Beta::Array<const Animation *>
@@ -39,11 +42,15 @@ Animator::Animator(Sprite *sprite_)
 /* 3.  Update
  *     *   Print out "Animation::Update" to the console.
  *     *   Animation code details:
- *         *   If an animation is not currently running, return. Otherwise, increase the elapsed time using _dt._
+ *         *   If an animation is not currently running, return.
  *         *   Set the sprite's frame to the current frame index of the animation. Make sure to pass in the address of _isDone_ for the last param, or else we won't know when the animation is finished playing.
  */
 void Animator::Update(float dt)
 {
+	fn("Update");
+	if(!isRunning)
+		return;
+     	sprite->SetFrame(animationList[animationIndex]->GetCurrentFrameIndex(dt, playbackSpeed, isLooping, &isDone));
 }
 
 /* 2.  Play
@@ -52,7 +59,7 @@ void Animator::Update(float dt)
  *     *   _isRunning_ is whether the animation is currently playing, _isDone _is whether the animation is finished, and _elapsedTime_ is how much time has passed since the animation started playing. You've just started playing an animation; knowing that, use your best judgment on what these should be set to.
  *     *   Get the animation in the animation list at the given index and use it to do the following:
  *         *   Set the sprite's sprite source to the animation's sprite source
- *         *   Set the sprite's frame to the current frame index of the animation.
+ *         *   Set the sprite's frame to what is returned by the animation's Play function.
  */
 void Animator::Play(size_t _animationIndex, float _playbackSpeed, bool _loop)
 {

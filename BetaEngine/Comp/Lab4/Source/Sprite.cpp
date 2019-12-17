@@ -52,6 +52,7 @@ void Sprite::Draw()
 	graphics.SetTransform(Vector2D(0, 0), Vector2D(1, 1), 0);
 	// Drawing the mesh (list of triangles)
 	mesh->Draw();
+
 }
 
 /* 3.  SetAlpha
@@ -77,6 +78,7 @@ float Sprite::GetAlpha() const
 void Sprite::SetFrame(unsigned int _frameIndex)
 {
 	std::cout << "Sprite::SetFrame\n";
+	std::cout << "frame = \n" << frameIndex;
 	if (frameIndex < spriteSource->GetFrameCount())
 		frameIndex = _frameIndex;
 }
