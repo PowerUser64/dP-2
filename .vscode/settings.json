@@ -2,7 +2,8 @@
     "files.associations": {
         "stdio.h": "c",
         "ostream": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "string": "cpp"
     },
     "clock.active": true
 }
