@@ -1,1 +1,0 @@
-DynamicArray& operator=(const DynamicArray array);

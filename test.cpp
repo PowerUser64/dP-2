@@ -1,27 +1,18 @@
 #include <iostream>
-
-#define pr(thing) std::cout << thing
-#define prn(thing) std::cout << thing << std::endl
-
-// 48 == '0'
-
-// changes text to a string
-int *Decode(char *input)
-{
-
-}
-
-// changes values to text
-char *Encode(int *output)
-{
-
-}
+#define pr std::cout
 
 int main()
 {
-    char *input = new char[64];
-    int *decoded = new decoded[];
-    pr("testing text decode");
-    input[0] = '4';
-    Decode(input);
+    int input;
+    pr << "int input = ";
+    std::cin >> input;
+    int i = 10, mod = input % i, modified = input;
+    for (; modified != 0; modified -= mod)
+    {
+        pr << i << "'s:" << mod << ',';
+
+        i *= 10;
+        mod = input % i;
+    }
+    
 }
