@@ -1,0 +1,36 @@
+a1's capacity = 8
+a1's size = 5
+0 1 2 3 4 
+
+a2's capacity = 5
+a2's size = 5
+0 1 2 3 4 
+
+a1's capacity = 8
+a1's size = 5
+0 1 2 3 4 
+
+a2's capacity = 5
+a2's size = 4
+0 1 2 3 
+
+a3's capacity = 5
+a3's size = 5
+0 1 2 3 4 
+
+a3's capacity = 5
+a3's size = 4
+0 1 2 3 
+
+a2's capacity = 5
+a2's size = 4
+0 1 2 3 
+
+a3's capacity = 5
+a3's size = 3
+0 1 2 
+
+a3's capacity = 5
+a3's size = 3
+0 1 2 
+
