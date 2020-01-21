@@ -20,13 +20,13 @@ a5 = a1 + a3:
 ==============
 a5's capacity = 5
 a5's size = 5
--1 4 9 6 8 
+-1 4 9 13 8 
 
 a6 = a5 + a4:
 ==============
 a6's capacity = 7
 a6's size = 7
-0 9 18 19 25 11 13 
+0 9 18 26 25 11 46 
 
 Printing all arrays:
 =====================
@@ -48,9 +48,9 @@ a4's size = 7
 
 a5's capacity = 5
 a5's size = 5
--1 4 9 6 8 
+-1 4 9 13 8 
 
 a6's capacity = 7
 a6's size = 7
-0 9 18 19 25 11 13 
+0 9 18 26 25 11 46 
 

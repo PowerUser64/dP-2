@@ -24,23 +24,19 @@
                 // executable name --------------------------------------------
                 
                 // Multi file projects
-                //   "${fileDirname}/Inheritance.exe",
+                  "${fileDirname}/myArray.exe",
                 
                 // Single file projects
-                  "${fileDirname}/${fileBasenameNoExtension}.exe",
+                //   "${fileDirname}/${fileBasenameNoExtension}.exe",
                 
                 // Files to compile -------------------------------------------
                 // Multi file projects "${fileDirname}/*",
-                //   "${fileDirname}/Point.cpp",
-                //   "${fileDirname}/Shape.cpp",
-                //   "${fileDirname}/Circle.cpp",
-                //   "${fileDirname}/Shape_With_Vertices.cpp",
-                //   "${fileDirname}/Rectangle.cpp",
-                //   "${fileDirname}/Polygon.cpp",
-                //   "${fileDirname}/main.cpp"
+                  "${fileDirname}/myArray.cpp",
+                  "${fileDirname}/myArray.h",
+                  "${fileDirname}/main.cpp"
                 
                 // Single file projects 
-                  "${relativeFile}",
+                //   "${relativeFile}",
             ],
             "problemMatcher": {
                 "owner": "cpp",

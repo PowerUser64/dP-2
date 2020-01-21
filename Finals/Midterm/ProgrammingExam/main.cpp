@@ -1,4 +1,4 @@
-#include "MyArray.h"
+#include "myArray.h"
 
 static void PrintArrayWithStats(const char *array_name_, const myArray& a_)
 {
@@ -142,71 +142,71 @@ void Test3(void)
     std::cout << std::endl;
 }
 
-void Test4(void)
-{
-    myArray a1;
-    for (int i = 0; i < 5; ++i)
-    {
-        a1.push(i * 2);
-    }
-    PrintArrayWithStats("a1", a1);
-    std::cout << std::endl;
+// void Test4(void)
+// {
+//     myArray a1;
+//     for (int i = 0; i < 5; ++i)
+//     {
+//         a1.push(i * 2);
+//     }
+//     PrintArrayWithStats("a1", a1);
+//     std::cout << std::endl;
 
-    myArray a2;
-    for (int i = 0; i < 7; ++i)
-    {
-        a2.push(i * 2 + 1);
-    }
-    PrintArrayWithStats("a2", a2);
-    std::cout << std::endl;
+//     myArray a2;
+//     for (int i = 0; i < 7; ++i)
+//     {
+//         a2.push(i * 2 + 1);
+//     }
+//     PrintArrayWithStats("a2", a2);
+//     std::cout << std::endl;
 
-    myArray a3;
-    for (int i = 0; i < 3; ++i)
-    {
-        a3.push(i * 3 - 1);
-    }
-    PrintArrayWithStats("a3", a3);
-    std::cout << std::endl;
+//     myArray a3;
+//     for (int i = 0; i < 3; ++i)
+//     {
+//         a3.push(i * 3 - 1);
+//     }
+//     PrintArrayWithStats("a3", a3);
+//     std::cout << std::endl;
 
-    const myArray a4(a3);
-    PrintArrayWithStats("a4", a4);
-    std::cout << std::endl;
-
-
-    std::cout << "a1 += a3:" << std::endl;
-    std::cout << "==========" << std::endl;
-    a1 += a3;
-    PrintArrayWithStats("a1", a1);
-    std::cout << std::endl;
-
-    std::cout << "a1 += a2:" << std::endl;
-    std::cout << "==========" << std::endl;
-    a1 += a2;
-    PrintArrayWithStats("a1", a1);
-    std::cout << std::endl;
-
-    //Should not compile
-    //a4 += a2;
+//     const myArray a4(a3);
+//     PrintArrayWithStats("a4", a4);
+//     std::cout << std::endl;
 
 
-    std::cout << "Printing all arrays:" << std::endl;
-    std::cout << "=====================" << std::endl;
-    PrintArrayWithStats("a1", a1);
-    std::cout << std::endl;
-    PrintArrayWithStats("a2", a2);
-    std::cout << std::endl;
-    PrintArrayWithStats("a3", a3);
-    std::cout << std::endl;
-    PrintArrayWithStats("a4", a4);
-    std::cout << std::endl;
+//     std::cout << "a1 += a3:" << std::endl;
+//     std::cout << "==========" << std::endl;
+//     a1 += a3;
+//     PrintArrayWithStats("a1", a1);
+//     std::cout << std::endl;
 
-}
+//     std::cout << "a1 += a2:" << std::endl;
+//     std::cout << "==========" << std::endl;
+//     a1 += a2;
+//     PrintArrayWithStats("a1", a1);
+//     std::cout << std::endl;
+
+//     //Should not compile
+//     //a4 += a2;
+
+
+//     std::cout << "Printing all arrays:" << std::endl;
+//     std::cout << "=====================" << std::endl;
+//     PrintArrayWithStats("a1", a1);
+//     std::cout << std::endl;
+//     PrintArrayWithStats("a2", a2);
+//     std::cout << std::endl;
+//     PrintArrayWithStats("a3", a3);
+//     std::cout << std::endl;
+//     PrintArrayWithStats("a4", a4);
+//     std::cout << std::endl;
+
+// }
 
 int main(void)
 {
-    Test1();
-    //Test2();
-    //Test3();
+    // Test1();
+    // Test2();
+    Test3();
     //Test4();
 
     return 0;
