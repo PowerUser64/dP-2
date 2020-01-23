@@ -1,73 +1,123 @@
-#include <iostream>
-
-class Foo
+/*
+#include <string.h>
+class String
 {
 public:
-    Foo();
-    Foo(const Foo &copy_);
-    Foo(int x_);
-    ~Foo();
-    void setX(int x_);
-    int getX() const;
-
+    String(const char * str_);
+    ~String();
 private:
-    int x;
+    char *string_;
 };
-
-Foo::Foo()
+//-------------------------------------
+String::String(const char *str_)
 {
-    x = 0;
-    std::cout << "Default Constructor Called" << std::endl;
+    int length = strlen(str_);
+    string_ = new char[length + 1];
+    strcpy(string_, str_);
+}
+String::~String() { delete[] string_; }
+String::String(String& that)
+{
+    
 }
 
-Foo::Foo(const Foo &copy_)
+String String::operator=(String& that)
 {
-    x = copy_.x;
-    std::cout << "Copy Constructor Called" << std::endl;
-}
 
-Foo::Foo(int x_)
-{
-    x = x_;
-    std::cout << "Conversion Constructor Called" << std::endl;
 }
-Foo::~Foo()
+//-------------------------------------
+    int main(void)
 {
-    std::cout << "Destructor Called" << std::endl;
-}
-
-void Foo::setX(int x_)
-{
-    x = x_;
-}
-int Foo::getX() const
-{
-    return x;
-}
-
-void Function1(Foo f_)
-{
-    f_.setX(10);
-}
-
-void Function2(Foo &f_)
-{
-    f_.setX(10);
-}
-
-int main(void)
-{
-    Foo f;
-    std::cout << "x in f: " << f.getX() << std::endl;
-    Function1(f);
-    std::cout << "x in f: " << f.getX() << std::endl;
-    Function2(f);
-    std::cout << "x in f: " << f.getX() << std::endl;
-    Foo f2(f);
-    f.setX(10);
-    std::cout << "x in f: " << f.getX() << std::endl;
-    std::cout << "x in f2: " << f2.getX() << std::endl;
-    Foo f3 = 5;
-    std::cout << "x in f3: " << f3.getX() << std::endl;
+    String str1("Hello");
+    String str2(str1);
+    String str3("World");
+    str3 = str2;
     return 0;
 }
+*/
+/*
+class Fun
+{
+private:
+    int i_;
+    double d_;
+public:
+    Fun operator-(const Fun &a) const;                 // ✅
+    double operator%(const double &a) const;           // ✅
+    Fun operator*(const Fun &a, const Fun &b) const ;  // ✅
+    friend Fun operator%(const Fun &a);                // ❌
+    double operator*(double a);                        // ✅
+    friend Fun operator-(const Fun &a) const;          // ❌
+    friend Fun operator*(double a, int b);             // ❌
+    Fun operator-(void) const;                         // ❌
+    Fun operator/(const Fun &a) const;                 // ✅
+    friend Fun operator-(const Fun &a, int b);         // ❌
+};
+*/
+/*
+int main(void)
+{
+    const float cf = 10.0f;
+    int x = 2;
+    float f = 5.0f;
+    float &r1 = f;          // ✅
+    float &r2 = r1;         // ✅
+    float &r3 = cf;         // ✅
+    float &r4 = (float &)x; // ❌
+    float &r5 = 5.0f;       // ❌
+    float &r6 = x;          // ❌
+    float &r7 = (float)x;   // ✅
+    float &r8 = &f;         // ❌
+    const float &r9 = f;    // ✅
+} *//*
+#include <iostream>
+namespace Foo
+{
+float f = 11.0f;
+}
+void Function1(void)
+{
+    std::cout << f << std::endl;      // ❌
+    std::cout << Foo::f << std::endl; // ✅
+    std::cout << ::f << std::endl;    // ❌
+}
+namespace Bar
+{
+float f = 12.0f;
+}
+void Function2(void)
+{
+    using namespace Foo;
+    std::cout << f << std::endl;      // ✅
+    std::cout << Foo::f << std::endl; // ✅
+    std::cout << ::f << std::endl;    // ❌
+    std::cout << Bar::f << std::endl; // ✅
+}
+float f = 10.0f;
+int main(void)
+{
+    Function1();
+    Function2();
+    float f = 13.0f;
+    std::cout << f << std::endl;      // ✅
+    std::cout << Foo::f << std::endl; // ✅
+    std::cout << ::f << std::endl;    // ✅
+    std::cout << Bar::f << std::endl; // ✅
+    return 0;
+}
+*/
+// Output:
+/* ❌
+ * 11
+ * ❌
+ * --
+ * 11
+ * 12
+ * ❌
+ * 12
+ * --
+ * 13
+ * 11
+ * 10
+ * 12
+ */

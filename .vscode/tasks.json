@@ -24,19 +24,19 @@
                 // executable name --------------------------------------------
                 
                 // Multi file projects
-                  "${fileDirname}/myArray.exe",
+                //   "${fileDirname}/myArray.exe",
                 
                 // Single file projects
-                //   "${fileDirname}/${fileBasenameNoExtension}.exe",
+                  "${fileDirname}/${fileBasenameNoExtension}.exe",
                 
                 // Files to compile -------------------------------------------
                 // Multi file projects "${fileDirname}/*",
-                  "${fileDirname}/myArray.cpp",
-                  "${fileDirname}/myArray.h",
-                  "${fileDirname}/main.cpp"
+                //   "${fileDirname}/myArray.cpp",
+                //   "${fileDirname}/myArray.h",
+                //   "${fileDirname}/main.cpp"
                 
                 // Single file projects 
-                //   "${relativeFile}",
+                  "${relativeFile}",
             ],
             "problemMatcher": {
                 "owner": "cpp",

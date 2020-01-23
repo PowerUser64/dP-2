@@ -10,9 +10,9 @@
             "type": "cppdbg",
             "request": "launch",
             // Multi file
-                "program": "${fileDirname}/myArray.exe",
+                // "program": "${fileDirname}/myArray.exe",
             // Single file
-                // "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+                "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
             
             "args": [],
             "stopAtEntry": false,
